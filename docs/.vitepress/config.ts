@@ -1,20 +1,16 @@
 export default {
   lang: 'en-US',
-  title: "Kobe Dereyne",
-  description: "",
+  title: "Portfolio",
+  description: "The portfolio of Kobe Dereyne - showcasing game development, graphics programming, and other projects.",
 
   themeConfig: {
+    appearance: 'dark',
     base: '/',
-    appearance: false,
     logo: "",
     socialLinks: [
       { icon: 'github', link: 'https://github.com/kobazaaa' },
-      {
-        icon: {
-          svg: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width: 1.2em; height: 1.2em;" />`
-        },
-        link: 'https://www.linkedin.com/in/kobe-dereyne-925ba02a3/'
-      },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/kobe-dereyne-925ba02a3/' },
+      { icon: 'youtube', link: 'https://github.com/kobazaaa' },
       {
         icon: {
           svg: `<span style="font-size: 1.5rem;">📧</span>`

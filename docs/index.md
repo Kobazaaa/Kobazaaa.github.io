@@ -3,34 +3,57 @@ layout: page
 title: About Me
 ---
 
-<div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+
+<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
 
 <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;"> <!-- Updated to wrap items for responsive layout -->
 
   <!-- Image block -->
-  <div style="flex: 0 0 150px; min-width: 150px; max-width: 150px;">
-    <img src="/images/Picture.png" alt="Kobe Dereyne" style="width: 150px; border-radius: 12px;" />
+  <div style="flex: 0 0 150px; min-width: 175px; max-width: 175px;">
+    <img src="/images/Picture.png" alt="Kobe Dereyne" style="width: 175px; border-radius: 12px;" />
   </div>
 
   <!-- Bio text -->
   <div style="flex: 1; min-width: 300px">
     <h2 style="margin-top: 0;">Kobe Dereyne</h2>
     <p style="margin-top: 10px;">
-      I’m a young programmer with a heavy interest in Graphics Programming.  
-      I’m currently studying at Howest - Digital Arts & Entertainment in the major Game Development.
+        <p>
+            I’m a young programmer with a heavy interest in Graphics Programming.  
+            I’m currently studying at Howest - Digital Arts & Entertainment in the major Game Development.
+        </p>
+        <br>
+        <p>
+            I enjoy building things from the ground up and figuring out how to make things run faster or look better.
+        </p>
     </p>
   </div>
 
-  <!-- Contact info -->
-  <div style="flex: 1;">
-    <h2 style="margin-top: 0;">Contact</h2>
-    <p style="margin-top: 10px;">✉️ <a href="mailto:kobe.dereyne@outlook.com">kobe.dereyne@outlook.com</a></p>
-    <p style="margin-top: 10px;">🔗 <a href="http://linkedin.com/in/kobe-dereyne-925ba02a3">LinkedIn</a></p>
-    <p style="margin-top: 10px;">💻 <a href="https://github.com/kobazaaa">GitHub</a></p>
-  </div>
+<!-- Contact info -->
+<div style="flex: 1;">
+  <h2 style="margin-top: 0;">Contact</h2>
+
+<p class="social-link">
+  <a href="mailto:kobe.dereyne@outlook.com" class="link-item">
+    ✉️ kobe.dereyne@outlook.com
+  </a>
+</p>
+<p class="social-link">
+  <a href="https://github.com/kobazaaa" target="_blank" class="link-item">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="link-icon" />
+    GitHub
+  </a>
+</p>
+<p class="social-link">
+  <a href="https://www.linkedin.com/in/kobe-dereyne-925ba02a3/" target="_blank" class="link-item">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn" class="link-icon" />
+    LinkedIn
+  </a>
+</p>
 </div>
 
-## My Projects
+</div>
+
+## Projects
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: flex-start;">
 
@@ -39,8 +62,8 @@ title: About Me
   link="./projects/Pompeii"
   img="./images/Pompeii.png"
   alt="Pompeii"
-  title="Pompeii - Vulkan Graphics Renderer"
-  description="A simple 3D Graphics Renderer in Vulkan."
+  title="Pompeii | Vulkan Rasterizer"
+  description="A simple 3D Graphics Rasterizer made with Vulkan."
 />
 
 <!-- CPU Ray-Tracer -->
@@ -49,7 +72,7 @@ title: About Me
   img="./images/RayTracing.png"
   alt="CPU Ray-Tracer"
   title="CPU Ray-Tracer"
-  description="A software Rasterizer."
+  description="A software ray-tracer made to learn and understand how ray-tracing and the math behind it works."
 />
 
 <!-- CPU Rasterizer -->
@@ -58,7 +81,7 @@ title: About Me
   img="./images/"
   alt="CPU Rasterizer"
   title="CPU Rasterizer"
-  description="A software Rasterizer."
+  description="A software rasterizer made to learn and understand how rasterization and the math behind it works."
 />
 
 <!-- Kobengine -->
@@ -67,7 +90,7 @@ title: About Me
   img="./images/"
   alt="Kobengine"
   title="Kobengine"
-  description="A software Rasterizer."
+  description="A small, custom-made 2D Game Engine."
 />
 
 <!-- DirectX11 Rasterizer -->
@@ -76,7 +99,7 @@ title: About Me
   img="./images/"
   alt="DirectX11 Rasterizer"
   title="DirectX11 Rasterizer"
-  description="A software Rasterizer."
+  description="A simple hardware rasterizer made with DirectX 11 to learn the API."
 />
 
 <!-- Ribbit Rampage -->
@@ -85,7 +108,7 @@ title: About Me
   img="https://img.itch.zone/aW1hZ2UvMzMyNDI1My8yMTMzNjUxOS5qcGc=/original/6dwrzE.jpg"
   alt="Ribbit Rampage"
   title="Ribbit Rampage"
-  description="Ribbit Rampage."
+  description="Ribbit Rampage is a chaotic co-op boss fighting game for two players."
 />
 
 <!-- Kirby's Adventure -->
@@ -94,7 +117,7 @@ title: About Me
   img="./images/KirbysAdventure.png"
   alt="Kirby's Adventure"
   title="Kirby's Adventure"
-  description="A software Rasterizer."
+  description="A remake of the first levels of Kirby's Adventure in C++."
 />
 
 <!-- Burger Time -->
@@ -102,8 +125,8 @@ title: About Me
   link="./projects/Burger Time"
   img="./images/"
   alt="Burger Time"
-  title="Burger Time Remake in Kobengine"
-  description="A remake of the classic Burger Time in custom engine."
+  title="Burger Time"
+  description="A remake of the classic Burger Time arcade game in my custom game engine (Kobengine)."
 />
 
 </div>
@@ -116,23 +139,23 @@ title: About Me
 <!-- Dutch -->
 <LanguageCard
     title="Dutch (native)"
-    speaking="🟪🟪🟪🟪🟪"
-    understanding="🟪🟪🟪🟪⬜"
-    writing="🟪🟪🟪🟪⬜"
+    speaking="🟩🟩🟩🟩🟩"
+    understanding="🟩🟩🟩🟩⬜"
+    writing="🟩🟩🟩🟩⬜"
 />
 <!-- English -->
 <LanguageCard
     title="English"
-    speaking="🟪🟪🟪🟪⬜"
-    understanding="🟪🟪🟪🟪⬜"
-    writing="🟪🟪🟪🟪⬜"
+    speaking="🟩🟩🟩🟩⬜"
+    understanding="🟩🟩🟩🟩⬜"
+    writing="🟩🟩🟩🟩⬜"
 />
 <!-- French -->
 <LanguageCard
     title="French"
-    speaking="🟪🟪⬜⬜⬜"
-    understanding="🟪🟪🟪⬜⬜"
-    writing="🟪🟪🟪⬜⬜"
+    speaking="🟩🟩⬜⬜⬜"
+    understanding="🟩🟩🟩⬜⬜"
+    writing="🟩🟩🟩⬜⬜"
 />
 </div>
 
@@ -173,7 +196,7 @@ title: About Me
 <!-- DirectX11 -->
 <SkillCard
     title="DirectX 11"
-    img="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+    img="https://placehold.co/512x512/transparent/white?text=DX\n11"
 />
 <!-- SDL -->
 <SkillCard

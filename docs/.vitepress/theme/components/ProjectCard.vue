@@ -1,10 +1,10 @@
 <template>
   <div class="project-card">
-    <a :href="link" style="display: block; height: 100%; color: inherit; text-decoration: none;">
+    <a :href="link" class="project-card-link">
       <img :src="img" :alt="alt" class="project-card-img" />
-      <div style="padding: 16px;">
-        <h3 style="margin: 0; font-size: 1.2rem; font-weight: bold;">{{ title }}</h3>
-        <p style="margin-top: 8px; color: #bbb;">{{ description }}</p>
+      <div class="project-card-content">
+        <h3 class="project-card-title">{{ title }}</h3>
+        <p class="project-card-description">{{ description }}</p>
       </div>
     </a>
   </div>
@@ -22,7 +22,7 @@ defineProps({
 
 <style scoped>
 .project-card {
-  width: 357px;
+  width: 31.6%;
   height: 350px;
   background-color: #2b2d2e;
   border-radius: 10px;
@@ -40,5 +40,38 @@ defineProps({
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.project-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-content {
+  padding: 16px;
+}
+
+.project-card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.project-card-description {
+  margin-top: 8px;
+  color: #bbb;
+}
+
+/* light mode */
+html:not(.dark) .project-card {
+  background-color: #f5f5f5;
+}
+html:not(.dark) .project-card-description {
+  color: #444;
+}
+html:not(.dark) .project-card-title {
+  color: #111;
 }
 </style>

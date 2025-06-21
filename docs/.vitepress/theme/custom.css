@@ -2,6 +2,9 @@
 html {
   color-scheme: dark;
 }
+body {
+  background-color: #191919;
+}
 
 /* root */
 :root {
@@ -10,19 +13,41 @@ html {
   --vp-font-family-mono: /* code font */;
 }
 
-/* disable toggle appearance */
-.VPNavBarAppearance {
-  display: none !important;
-}
-
 /* links */
 a {
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 a:hover {
   color: #3a916a;
+  transform: translateY(-1px) scale(1.02);
   text-decoration: underline;
+}
+
+.social-link {
+  margin-top: 10px;
+}
+.link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid #666;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: border-color 0.2s, background-color 0.2s;
+  width: 100%;
+  height: 50px;
+  background-color: #2b2d2e;
+}
+.link-item:hover {
+  transform: translateY(-1px) scale(1.02);
+  text-decoration: underline;
+}
+.link-icon {
+  width: 1.2em;
+  height: 1.2em;
 }
 
 /* headers */
@@ -46,4 +71,54 @@ h4 .header-anchor,
 h5 .header-anchor,
 h6 .header-anchor {
   display: none !important;
+}
+
+
+/* Light mode theme */
+html:not(.dark) {
+  color-scheme: light;
+}
+html:not(.dark) body {
+  background-color: #e8e8e8;
+  color: #222;
+}
+
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) h5,
+html:not(.dark) h6 {
+  color: #111;
+}
+
+html:not(.dark) a:hover {
+  color: #2e7d32;
+}
+
+html:not(.dark) .link-item {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  color: #111;
+}
+html:not(.dark) .link-item:hover {
+  border-color: #aaa;
+  background-color: #dfdfdf;
+}
+
+html.dark .link-item {
+  background-color: #2b2d2e;
+  border: 1px solid #666;
+  color: white;
+}
+html.dark .link-item:hover {
+  border-color: #aaa;
+  background-color: rgb(63, 63, 63)
+}
+
+html:not(.dark) .link-item img {
+  filter: invert(0) !important;
+}
+html.dark .link-item img {
+  filter: invert(1) !important;
 }
