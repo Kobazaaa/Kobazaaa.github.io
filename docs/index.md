@@ -60,7 +60,7 @@ title: About Me
 <!-- Pompeii -->
 <ProjectCard
   link="./projects/Pompeii"
-  img="./images/Pompeii.png"
+  img="./images/project-covers/Pompeii.png"
   alt="Pompeii"
   title="Pompeii | Vulkan Rasterizer"
   description="A simple 3D Graphics Rasterizer made with Vulkan."
@@ -69,37 +69,37 @@ title: About Me
 <!-- CPU Ray-Tracer -->
 <ProjectCard
   link="./projects/CPU Ray-Tracer"
-  img="./images/RayTracing.png"
+  img="./images/project-covers/RayTracing.png"
   alt="CPU Ray-Tracer"
   title="CPU Ray-Tracer"
   description="A software ray-tracer made to learn and understand how ray-tracing and the math behind it works."
 />
 
-<!-- CPU Rasterizer -->
+<!-- DirectX11 Rasterizer -->
 <ProjectCard
-  link="./projects/CPU Rasterizer"
-  img="./images/"
-  alt="CPU Rasterizer"
-  title="CPU Rasterizer"
-  description="A software rasterizer made to learn and understand how rasterization and the math behind it works."
+  link="./projects/DirectX11 Rasterizer"
+  img="./images/project-covers/HardwareRasterizerDX11.png"
+  alt="DirectX11 Rasterizer"
+  title="DirectX11 Rasterizer"
+  description="A simple hardware rasterizer made with DirectX 11 to learn the API."
 />
 
 <!-- Kobengine -->
 <ProjectCard
   link="./projects/Kobengine"
-  img="./images/"
+  img="./images/project-covers/Kobengine.png"
   alt="Kobengine"
   title="Kobengine"
   description="A small, custom-made 2D Game Engine."
 />
 
-<!-- DirectX11 Rasterizer -->
+<!-- CPU Rasterizer -->
 <ProjectCard
-  link="./projects/DirectX11 Rasterizer"
-  img="./images/"
-  alt="DirectX11 Rasterizer"
-  title="DirectX11 Rasterizer"
-  description="A simple hardware rasterizer made with DirectX 11 to learn the API."
+  link="./projects/CPU Rasterizer"
+  img="./images/project-covers/SoftwareRasterizer.bmp"
+  alt="CPU Rasterizer"
+  title="CPU Rasterizer"
+  description="A software rasterizer made to learn and understand how rasterization and the math behind it works."
 />
 
 <!-- Ribbit Rampage -->
@@ -114,7 +114,7 @@ title: About Me
 <!-- Kirby's Adventure -->
 <ProjectCard
   link="./projects/Kirbys Adventure"
-  img="./images/KirbysAdventure.png"
+  img="./images/project-covers/KirbysAdventure.png"
   alt="Kirby's Adventure"
   title="Kirby's Adventure"
   description="A remake of the first levels of Kirby's Adventure in C++."
@@ -123,7 +123,7 @@ title: About Me
 <!-- Burger Time -->
 <ProjectCard
   link="./projects/Burger Time"
-  img="./images/"
+  img="./images/project-covers/BurgerTime.png"
   alt="Burger Time"
   title="Burger Time"
   description="A remake of the classic Burger Time arcade game in my custom game engine (Kobengine)."

@@ -23,7 +23,7 @@ defineProps({
 <style scoped>
 .project-card {
   width: 31.6%;
-  height: 350px;
+  height: 385px;
   background-color: #2b2d2e;
   border-radius: 10px;
   overflow: hidden;
@@ -38,7 +38,7 @@ defineProps({
 
 .project-card-img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
