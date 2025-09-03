@@ -1,0 +1,29 @@
+{
+  "name": "vitepress-project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "devhost": "vitepress dev docs --host",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "serve": "^14.2.4",
+    "vitepress": "1.0.0-alpha.28",
+    "vue": "3.2.44"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  },
+  "dependencies": {
+    "@egjs/vue-grid": "^1.17.0",
+    "lucide-vue-next": "^0.525.0",
+    "vue-carousel": "^0.18.0"
+  }
+}
