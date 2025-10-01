@@ -7,9 +7,10 @@ layout: page
 <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
 
   <!-- Image block -->
-  <div style="flex: 0 0 195px;">
-    <img src="/images/Picture.png" alt="Kobe Dereyne" style="border-radius: 12px;" />
-  </div>
+<div style="flex: 0 0 195px; margin: auto 0;">
+  <img src="/images/Picture2.png" alt="Kobe Dereyne" 
+       style="width: 195px; height: 195px; border-radius: 50%; object-fit: cover; object-position: 50% 10%; border: 1.5px solid #272c2aff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);" />
+</div>
 
   <!-- Bio text -->
   <div style="flex: 2 0 300px; min-width: auto; max-width: 600px;">
@@ -22,7 +23,7 @@ layout: page
         <br>
         <p>
             I like building things from the ground up and figuring out how to make things run faster or look better. <br>
-            Math, science, and computer science have always been a heavy interest of mine, which led me to study Game Development. During my studies I discovered a love for Graphics & Engine Programming.
+            Math, science, and computer science have always been strong interests of mine, which led me to study Game Development. During my studies I discovered a love for Graphics & Engine Programming.
         </p>
     </p>
   </div>
