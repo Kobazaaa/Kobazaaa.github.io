@@ -274,11 +274,6 @@ details[open] summary::after {
     title="Vulkan"
     img="https://upload.wikimedia.org/wikipedia/commons/f/f8/Vulkan_API_logo.svg"
 />
-<!-- WPF -->
-<SkillCard
-    title="WPF"
-    fallback="LayoutPanelTop"
-/>
 <!-- C++ STD -->
 <SkillCard
     title="C++ Standard Library"
@@ -298,6 +293,11 @@ details[open] summary::after {
 <SkillCard
     title="SDL"
     img="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sdl/sdl-original.svg"
+/>
+<!-- WPF -->
+<SkillCard
+    title="WPF"
+    fallback="LayoutPanelTop"
 />
 </div>
 
