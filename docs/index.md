@@ -63,7 +63,7 @@ layout: page
   img="./images/project-covers/Pompeii.png"
   alt="Pompeii"
   title="Pompeii | Vulkan Rasterizer"
-  description="A 3D Graphics Rasterizer made with Vulkan. Actively evolving with new features, tweaks and improvements."
+  description="A 3D Graphics Rasterizer made with Vulkan. Actively evolving with new features, tweaks, and improvements."
   status="Active Development"
 />
 
