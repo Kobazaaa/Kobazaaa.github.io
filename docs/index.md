@@ -4,6 +4,11 @@ layout: page
 
 <div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
 
+<InfoCard title="End-Of-Study Internship">
+  Hello! I'm currently looking for an end-of-study internship starting mid-February 2026. Feel free to explore my portfolio and resume, and get in contact if you're interested. I appreciate all the help!
+</InfoCard>
+
+
 <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
 
   <!-- Image block -->

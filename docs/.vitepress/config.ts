@@ -15,7 +15,7 @@ export default {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/kobazaaa' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/kobe-dereyne-925ba02a3/' },
-      { icon: 'youtube', link: 'https://github.com/kobazaaa' },
+      { icon: 'youtube', link: 'https://youtube.com/@kobe1545?si=Esrpws7TEge4U6Zh' },
       {
         icon: {
           svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">

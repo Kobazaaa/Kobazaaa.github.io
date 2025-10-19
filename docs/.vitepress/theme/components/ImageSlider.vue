@@ -41,10 +41,14 @@ const props = defineProps({
   images: {
     type: Array,
     required: true
+  },
+  start: {
+    type: Number,
+    default: 0
   }
 })
 
-const progress = ref(0)
+const progress = ref(props.start)
 
 const getLayerStyle = (index) => {
   const total = props.images.length

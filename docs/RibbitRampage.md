@@ -42,6 +42,8 @@ My responsibilities and contributions included:
 - UI implementation
 - Game state screens (Main Menu, Game Over)
 - Audio
+- Polish such as platforms and lillypads moving in the wind
+- Phase transitions
 - ...
 </div>
 
@@ -66,7 +68,6 @@ import { VPTeamMembers } from 'vitepress/theme';
 
 <VPTeamMembers size="small" :members="[
   {
-    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQHIj5qJviMbvA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731230532587?e=1756944000&v=beta&t=Qb2TsAH-voF_XoqjCiYRJOgHW0niHzlUE9l5xBUGM1k',
     name: 'Twan Paemeleire',
     title: 'Programmer',
     links: [
@@ -74,7 +75,6 @@ import { VPTeamMembers } from 'vitepress/theme';
     ]
   },
   {
-    avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQEdKq21x0rIjQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723411050496?e=1756944000&v=beta&t=EXO8_YovA_honvx6ZhCWpMwAr1VXxUvgtaZmQ440ld0',
     name: 'Kobe Dereyne',
     title: 'Programmer',
     links: [
@@ -82,7 +82,6 @@ import { VPTeamMembers } from 'vitepress/theme';
     ]
   },
   {
-    avatar: 'https://media.licdn.com/dms/image/v2/D5603AQFM-cWy9ehHIQ/profile-displayphoto-shrink_400_400/B56ZTdj8GoGQAg-/0/1738883974804?e=1756944000&v=beta&t=5afnOxyBRZb4hGWzUUZ4LhJxZkm5hzrHxnxREQ2fpJw',
     name: 'Viktor Cloes',
     title: 'Programmer',
     links: [
@@ -90,7 +89,6 @@ import { VPTeamMembers } from 'vitepress/theme';
     ]
   },
   {
-    avatar: 'https://media.licdn.com/dms/image/v2/D4E35AQGeCRjiZSSLqQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1715843480123?e=1752012000&v=beta&t=DO3-PgTRYkjO4hRgOiiP_tnwCmsLYZya9Re-VH3imc4',
     name: 'Eleonora Ciccarelli',
     title: 'Artist',
     links: [
@@ -98,7 +96,6 @@ import { VPTeamMembers } from 'vitepress/theme';
     ]
   },
   {
-    avatar: 'https://media.licdn.com/dms/image/v2/D5603AQHWIvONZuLrNw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1730920781615?e=1756944000&v=beta&t=yydlnPWUEAIcTb5zEQ3hEQN-dAjx9gf4-Hqx-wnSisI',
     name: 'Paula Szklarz',
     title: 'Artist',
     links: [

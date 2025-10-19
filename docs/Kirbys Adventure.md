@@ -20,13 +20,16 @@ Since we were beginner programmers, we were given a simple, barebones framework 
 
 ## Game Showoff
 
-The following video was my presentation, showing off all the features. I was also lucky enough to be one of selected few to be featured on the [Digital Arts & Entertainment website](https://www.digitalartsandentertainment.be/page/27/Programming+2), to inspire future students and give them a glimpse of what the course is about!
-
 <div style="max-width: 65%; margin: 24px auto; ">
 <div style="padding:56.25% 0 0 0;position:relative;">
+
   <iframe src="https://player.vimeo.com/video/1069499095?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="border: 3px solid #42b883; border-radius: 15px; position:absolute;top:0;left:0;width:100%;height:100%;" title="2324_PROG2_Dereyne_Kobe_KirbysAdventure"></iframe>
 </div>
 </div>
+
+<InfoCard title="University Recognition">
+  The showcase video was my presentation for my end prodcut of Kirby's Adventure, showing off all the features. I was also lucky enough to be one of selected few to be featured on the <a href="https://www.digitalartsandentertainment.be/page/27/Programming+2">Digital Arts & Entertainment website</a>, to inspire future students and give them a glimpse of what the course is about!
+</InfoCard>
 
 ## Class Hierarchy
 

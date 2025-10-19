@@ -1,6 +1,8 @@
 <!-- .vitepress/theme/components/SkillCard.vue -->
 <template>
-  <div :class="['skill-card', { 'hover-enabled': hoverEffect }]">
+  <div class="skill-card"
+      @mousemove="onMouseMove"
+      @mouseleave="onMouseLeave">
     <div class="skill-header">
       <template v-if="img">
         <img :src="img" :alt="title" width="32" height="32" />
@@ -26,12 +28,23 @@ defineProps({
   fallback: {
     type: String,
     default: ''
-  },
-  hoverEffect: {
-    type: Boolean,
-    default: false
   }
 })
+
+const onMouseMove = (e) => {
+  const card = e.currentTarget
+  const rect = card.getBoundingClientRect()
+  const x = ((e.clientX - rect.left) / rect.width) * 100
+  const y = ((e.clientY - rect.top) / rect.height) * 100
+  card.style.setProperty('--mx', `${x}%`)
+  card.style.setProperty('--my', `${y}%`)
+}
+
+const onMouseLeave = (e) => {
+  const card = e.currentTarget
+  card.style.removeProperty('--mx')
+  card.style.removeProperty('--my')
+}
 </script>
 
 <style scoped>
@@ -54,10 +67,15 @@ defineProps({
   align-items: center;
   padding: 16px;
   height: 64px;
-  background-color: #2b2d2e;
-  transition: background-color 0.3s, border-color 0.3s;
-
-  background: linear-gradient(135deg, #252525, #373737);
+  background: radial-gradient(
+    circle at var(--mx, 100%) var(--my, 100%),
+    #3a3a3a,
+    #2b2d2e
+  );
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.05),
     0 2px 4px rgba(0, 0, 0, 0.3);
@@ -81,15 +99,34 @@ defineProps({
 html:not(.dark) .lucide-icon {
   color: #333;
 }
-.skill-card.hover-enabled:hover .lucide-icon {
+.skill-card:hover .lucide-icon {
   color: #42b883;
+}
+.skill-card:hover {
+  border-color: #42b883;
 }
 
 /* light mode */
 html:not(.dark) .skill-card {
-  background-color: #f5f5f5;
-  border-color: #ccc;
-  background: linear-gradient(135deg, #f4f4f4, #eaeaea);
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  height: 64px;
+  background: radial-gradient(
+    circle at var(--mx, 100%) var(--my, 100%),
+    #f4f4f4,
+    #eaeaea
+  );
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 html:not(.dark) .skill-header {
