@@ -186,6 +186,21 @@ details[open] summary::after {
 </div>
 </details>
 
+## Research
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+
+<!-- Gradwork -->
+<ProjectCard
+  link="./OzoneAbsorption"
+  img="./images/project-covers/GradworkDAE.png"
+  alt="Graduation Work - DAE"
+  title="Ozone Absorption in Single Atmospheric Scattering (Vulkan)"
+  description="The effects of Ozone Absorption in a Single Atmospheric Scattering model."
+  status="Finished"
+/>
+
+</div>
 
 ## Skills
 

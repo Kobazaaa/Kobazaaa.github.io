@@ -11,6 +11,7 @@ import ImageSlider from './components/ImageSlider.vue'
 import Carrousel from './components/Carrousel.vue'
 import ImageGrid from './components/ImageGrid.vue';
 import InfoCard from './components/InfoCard.vue';
+import TextCard from './components/TextCard.vue';
 import * as lucide from 'lucide-vue-next'
 
 export default {
@@ -26,6 +27,7 @@ export default {
     app.component('Carrousel', Carrousel)
     app.component('ImageGrid', ImageGrid)
     app.component('InfoCard', InfoCard)
+    app.component('TextCard', TextCard)
 
     Object.entries(lucide).forEach(([name, component]) => {
       app.component(name, component)

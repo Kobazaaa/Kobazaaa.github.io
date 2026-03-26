@@ -36,6 +36,7 @@ export default {
               { text: 'Pompeii', link: './Pompeii.md' },
               { text: 'CPU Ray-Tracer', link: './CPU Ray-Tracer.md' },
               { text: 'CPU/GPU Rasterizer', link: './DualRasterizer.md' },
+              { text: 'Ozone Absorption Research', link: './OzoneAbsorption.md' },
             ]
           },
           {

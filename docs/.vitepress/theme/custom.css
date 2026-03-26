@@ -97,6 +97,15 @@ h6 .header-anchor {
   margin-bottom: 0.5em;
 }
 
+/* Quote */
+blockquote {
+  border-left: 2px solid #42b883;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--vp-c-text-1);
+}
+
 /* Light mode theme */
 html:not(.dark) {
   color-scheme: light;
