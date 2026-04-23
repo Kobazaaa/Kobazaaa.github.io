@@ -117,5 +117,15 @@ export const projects = {
       "Small atmospheric 3D diorama created with Blender and Photoshop.",
     status: "Finished",
   tags: ["Solo", "Art", "Learning"]
-  }
+  },
+  
+  kuisje_huisje: {
+    link: "./KuisjeHuisje",
+    img: "./images/project-covers/KuisjeHuisje.png",
+    title: "Kuisje Huisje",
+    description:
+      "A gamified tool that helps psychologists map out the protective network of children who deal with domestic violence.",
+    status: "Finished",
+  tags: ["Group", "Unity", "C#", "Game", "Featured", "Client"]
+  },
 }

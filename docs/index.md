@@ -62,7 +62,7 @@ import { projects } from './.vitepress/theme/projects'
 
 const selectedTags = ref(['Featured'])
 const expanded = ref(false)
-const mode = ref('OR') // 'OR' or 'AND'
+const mode = ref('AND') // 'OR' or 'AND'
 
 // Count occurrences of each tag
 const tagCounts = computed(() => {

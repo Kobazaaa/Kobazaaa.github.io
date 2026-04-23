@@ -21,6 +21,9 @@ export const TAG_COLORS = {
   // Content / art
   Art: '#ab47bc',
 
+  // Other
+  Client: '#ffca28',
+
   // Specific tags
   Group: '#26a69a',
   Solo: '#6d4c41',
