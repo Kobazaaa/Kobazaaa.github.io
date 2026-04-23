@@ -100,6 +100,11 @@ html:not(.dark) .language-card {
   color: #111;
   background: linear-gradient(135deg, #f4f4f4, #eaeaea);
 }
+html:not(.dark) .language-card progress::-webkit-progress-bar {
+  background-color: #d8d8d8;
+  border-radius: 7px;
+}
+
 .language-card p {
   margin: 0;
 }

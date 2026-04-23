@@ -15,6 +15,7 @@ layout: page
   <!-- Bio text -->
   <div style="flex: 2 0 300px; min-width: auto; max-width: 600px;">
     <h2 style="margin-top: 0;">Kobe Dereyne</h2>
+  <p class="subtitle">Graphics & Engine Programmer</p>
     <p style="margin-top: 10px;">
         <p>
             I am a passionate C++ Programmer with a strong passion for Graphics & Engine Programming.
@@ -55,151 +56,103 @@ layout: page
 
 ## Projects
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+<script setup>
+import { ref, computed } from 'vue'
+import { projects } from './.vitepress/theme/projects'
 
-<!-- Pompeii -->
-<ProjectCard
-  link="./Pompeii"
-  img="./images/project-covers/Pompeii.png"
-  alt="Pompeii"
-  title="Pompeii | Vulkan Rasterizer"
-  description="A 3D Graphics Rasterizer made with Vulkan. Actively evolving with new features, tweaks, and improvements."
-  status="Active Development"
-/>
+const selectedTags = ref(['Featured'])
+const expanded = ref(false)
+const mode = ref('OR') // 'OR' or 'AND'
 
-<!-- CPU Ray-Tracer -->
-<ProjectCard
-  link="./CPU Ray-Tracer"
-  img="./images/project-covers/RayTracing.png"
-  alt="CPU Ray-Tracer"
-  title="CPU Ray-Tracer"
-  description="A software ray-tracer made to learn and understand how ray-tracing and the math behind it works."
-  status="Finished"
-/>
+// Count occurrences of each tag
+const tagCounts = computed(() => {
+    const counts = {}
+    Object.values(projects).forEach(p => (p.tags || []).forEach(t => (counts[t] = (counts[t] || 0) + 1)))
+    return counts
+})
 
-<!-- Dual Rasterizer -->
-<ProjectCard
-  link="./DualRasterizer"
-  img="./images/project-covers/HardwareRasterizerDX11.png"
-  alt="DualRasterizer"
-  title="CPU/GPU Rasterizer"
-  description="A combined software & hardware rasterizer to learn the math behind rasterization and DX11."
-  status="Finished"
-/>
+// All tags sorted: Featured, Solo, Group, then alphabetical
+const allTags = computed(() =>
+    Object.keys(tagCounts.value).sort((a, b) => {
+        const priority = { Featured: 0, Solo: 1, Group: 2 }
+        const pa = Object.prototype.hasOwnProperty.call(priority, a) ? priority[a] : 3
+        const pb = Object.prototype.hasOwnProperty.call(priority, b) ? priority[b] : 3
+        if (pa !== pb) return pa - pb
+        return a.localeCompare(b)
+    })
+)
 
-<!-- Kobengine -->
-<ProjectCard
-  link="./Kobengine"
-  img="./images/project-covers/Kobengine.png"
-  alt="Kobengine"
-  title="Kobengine"
-  description="A small, custom-made 2D Game Engine, applying several useful Design Patterns."
-  status="On Hold"
-/>
+function toggleTag(tag) {
+    const current = selectedTags.value
+    const idx = current.indexOf(tag)
 
-<!-- Ribbit Rampage -->
-<ProjectCard
-  link="./RibbitRampage"
-  img="https://img.itch.zone/aW1hZ2UvMzMyNDI1My8yMTMzNjUxOS5qcGc=/original/6dwrzE.jpg"
-  alt="Ribbit Rampage"
-  title="Ribbit Rampage"
-  description="Ribbit Rampage is a chaotic co-op boss fighting game for two players."
-  status="Finished"
-/>
+    // If currently only Featured is selected and user selects a different tag,
+    // remove Featured so filtering starts from the user's chosen tags.
+    if (idx === -1 && current.length === 1 && current[0] === 'Featured' && tag !== 'Featured') {
+        selectedTags.value = [tag]
+        return
+    }
 
-<!-- Kirby's Adventure -->
-<ProjectCard
-  link="./Kirbys Adventure"
-  img="./images/project-covers/KirbysAdventure.png"
-  alt="Kirby's Adventure"
-  title="Kirby's Adventure"
-  description="A remake of the first levels of Kirby's Adventure in C++."
-  status="Finished"
-/>
+    if (idx === -1) current.push(tag)
+    else current.splice(idx, 1)
+}
 
+function clearTags() {
+    // Reset to the subtle default: only Featured
+    selectedTags.value = ['Featured']
+}
+
+const filteredProjects = computed(() => {
+    const tags = selectedTags.value
+    if (!tags.length) return Object.keys(projects)
+    return Object.entries(projects)
+        .filter(([, p]) => {
+            const pTags = p.tags || []
+            if (mode.value === 'AND') {
+                return tags.every(t => pTags.includes(t))
+            }
+            // default OR
+            return tags.some(t => pTags.includes(t))
+        })
+        .map(([k]) => k)
+})
+
+// Expose visible tags for rendering
+const visibleTags = computed(() => allTags.value)
+</script>
+
+<div class="tag-area-container">
+    <div class="tag-left">
+        <div class="tag-strip" v-show="expanded" :class="{ 'has-filter': selectedTags.length > 0 && !(selectedTags.length === 1 && selectedTags[0] === 'Featured') }">
+        </div>
+        <div class="tag-filter-bar" v-show="expanded">
+            <div class="tag-list">
+                <button
+                    v-for="t in visibleTags"
+                    :key="t + '-full'"
+                    @click="toggleTag(t)"
+                    :class="['tag-pill', { active: selectedTags.includes(t), featured: t === 'Featured' }]">
+                    {{ t }} <small class="tag-count">{{ tagCounts[t] }}</small>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="tag-right" style="margin-bottom:0.7rem;">
+        <button class="tag-action" @click="expanded = !expanded">{{ expanded ? 'Hide tags' : 'Show tags' }}</button>
+        <button class="tag-action" @click="clearTags">Clear</button>
+        <!-- panel shown under the buttons when expanded -->
+        <div v-show="expanded" class="tag-controls-panel">
+            <span class="panel-count">{{ filteredProjects.length }} result(s)</span>
+            <div class="mode-toggle" role="group" aria-label="Filter mode">
+                <button :class="['mode-btn', { active: mode === 'OR' } ]" @click="mode = 'OR'">OR</button>
+                <button :class="['mode-btn', { active: mode === 'AND' } ]" @click="mode = 'AND'">AND</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!-- Extra Projects -->
-<style>
-details summary {
-  cursor: pointer;
-  color: #888888;
-  font-weight: 400;
-  font-size: 0.95rem;
-  text-align: center;
-  list-style: none;
-  position: relative;
-}
-
-details summary::after {
-  content: "View More";
-  display: inline-block;
-  margin-left: 8px;
-  font-weight: 400;
-  color: #888888;
-}
-
-details[open] summary::after {
-  content: "View Less";
-}
-</style>
-
-<details ref="detailsRef" @toggle="toggleOpen" style="margin-top: 24px;">
-  <summary></summary>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 16px;">
-        <!-- Burger Time -->
-        <ProjectCard
-            link="./Burger Time"
-            img="./images/project-covers/BurgerTime.png"
-            alt="Burger TIme"
-            title="Burger Time"
-            description="A remake of the classic Burger Time game in my own custom 2D Game Engine in C++ (Kobengine)!"
-            status="Finished"
-        />
-        <!-- EndlessPrototype -->
-        <ProjectCard
-            link="./EndlessPrototype"
-            img="./images/project-covers/EndlessPrototype.png"
-            alt="Endless Prototype"
-            title="Endless Prototype"
-            description="A prototpye of an endless survival horror game made in Unity, with the goal to survive as long as possible."
-            status="Prototype"
-        />
-        <!-- PPGA Math Game -->
-        <ProjectCard
-            link="./PPGAGame"
-            img="./images/project-covers/PPGA.png"
-            alt="PPGAGame"
-            title="PPGAGame"
-            description="A 2D game made without any vector or matrix math, but rather only Plane Perspective Geometric Algebra (PPGA)."
-            status="Prototype"
-        />
-        <!-- Forest Loner -->
-        <ProjectCard
-            link="./ForestLonerDiorama"
-            img="./images/project-covers/ForestLoner.png"
-            alt="Forest Loner"
-            title="Forest Loner 3D Diorama"
-            description="A small 3D Diorama set in a forest. Made with Blender + Adobe Photoshop."
-            status="Finished"
-        />
-</div>
-</details>
-
-## Research
-
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
-
-<!-- Gradwork -->
-<ProjectCard
-  link="./OzoneAbsorption"
-  img="./images/project-covers/GradworkDAE.png"
-  alt="Graduation Work - DAE"
-  title="Ozone Absorption in Single Atmospheric Scattering (Vulkan)"
-  description="The effects of Ozone Absorption in a Single Atmospheric Scattering model."
-  status="Finished"
-/>
-
+<div class="projects-grid">
+    <ProjectCard v-for="key in filteredProjects" :key="key" :project="key" />
 </div>
 
 ## Skills

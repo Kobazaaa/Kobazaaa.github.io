@@ -4,23 +4,13 @@
       @mousemove="onMouseMove"
       @mouseleave="onMouseLeave">
     <div class="skill-header">
-      <template v-if="img">
-        <img :src="img" :alt="title" width="32" height="32" />
-      </template>
-      <template v-else>
-        <component
-          :is="lucideIcons[fallback] || DefaultIcon"
-          class="lucide-icon"
-        />
-      </template>
-      <strong>{{ title }}</strong>
+    <IconTitle :img="img" :fallback="fallback" :title="title" />
     </div>
   </div>
 </template>
 
 <script setup>
-import * as lucideIcons from 'lucide-vue-next'
-const DefaultIcon = lucideIcons['Wrench']
+import IconTitle from './IconTitle.vue'
 
 defineProps({
   title: String,

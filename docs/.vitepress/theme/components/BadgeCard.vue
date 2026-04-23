@@ -1,24 +1,12 @@
-<!-- .vitepress/theme/components/Card.vue -->
+<!-- .vitepress/theme/components/BadgeCard.vue -->
 <template>
   <div class="card">
-    <div class="header">
-      <template v-if="img">
-        <img :src="img" :alt="title" width="32" height="32" />
-      </template>
-      <template v-else>
-        <component
-          :is="lucideIcons[fallback] || DefaultIcon"
-          class="lucide-icon"
-        />
-      </template>
-      <strong>{{ title }}</strong>
-    </div>
+    <IconTitle :img="img" :fallback="fallback" :title="title" />
   </div>
 </template>
 
 <script setup>
-import * as lucideIcons from 'lucide-vue-next'
-const DefaultIcon = lucideIcons['Wrench']
+import IconTitle from './IconTitle.vue'
 
 defineProps({
   title: String,

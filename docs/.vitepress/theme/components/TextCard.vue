@@ -1,21 +1,13 @@
 <template>
   <div class="card">
-    <div class="header">
-      <component
-        v-if="icon"
-        :is="lucideIcons[icon] || DefaultIcon"
-        class="lucide-icon"
-      />
-      <strong>{{ title }}</strong>
-    </div>
+    <IconTitle :fallback="icon" :title="title" />
 
-<p v-if="description" class="description" v-html="description"></p>
+    <p v-if="description" class="description" v-html="description"></p>
   </div>
 </template>
 
 <script setup>
-import * as lucideIcons from 'lucide-vue-next'
-const DefaultIcon = lucideIcons['Wrench']
+import IconTitle from './IconTitle.vue'
 
 defineProps({
   title: String,
