@@ -287,6 +287,11 @@ const visibleTags = computed(() => allTags.value)
     title="Git"
     img="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
 />
+<!-- Gitea -->
+<SkillCard
+    title="Gitea"
+    img="https://upload.wikimedia.org/wikipedia/commons/b/bb/Gitea_Logo.svg"
+/>
 </div>
 
 ### Collaboration & Tools
@@ -317,10 +322,20 @@ const visibleTags = computed(() => allTags.value)
     title="RenderDoc"
     img="https://raw.githubusercontent.com/baldurk/renderdoc/v1.x/qrenderdoc/Resources/logo.svg"
 />
+<!-- YouTrack -->
+<SkillCard
+    title="YouTrack"
+    img="https://upload.wikimedia.org/wikipedia/commons/8/8d/YouTrack_Icon.svg"
+/>
 <!-- Notion -->
 <SkillCard
     title="Notion"
     img="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg"
+/>
+<!-- Slack -->
+<SkillCard
+    title="Slack"
+    img="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg"
 />
 <!-- Blender -->
 <SkillCard

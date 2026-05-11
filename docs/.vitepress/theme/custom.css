@@ -226,6 +226,22 @@ html.dark .link-item img {
   box-shadow: 0 4px 12px rgba(46,125,50,0.12);
 }
 
+.tag-pill.active {
+  position: relative;
+  padding-right: 28px;
+}
+.tag-pill.active::after {
+  content: '✕';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  opacity: 1;
+  transition: opacity 0.12s ease;
+  pointer-events: none;
+}
+
 .tag-action {
   flex: 0 0 auto;
   white-space: nowrap;

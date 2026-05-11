@@ -2,31 +2,45 @@ export const projects = {
   pompeii: {
     link: "./Pompeii",
     img: "./images/project-covers/Pompeii.png",
-    title: "Pompeii | Vulkan Rasterizer",
+    title: "Pompeii | Renderer",
     description:
       "A 3D graphics rasterizer made with Vulkan. Actively evolving with new features, optimizations, and architecture improvements.",
     status: "Active Development",
+  order: 1,
   tags: ["Solo", "Vulkan", "C++", "Learning", "Featured"]
   },
 
   kobengine: {
     link: "./Kobengine",
     img: "./images/project-covers/Kobengine.png",
-    title: "Kobengine2D",
+    title: "Kobengine | Engine",
     description:
       "A small custom 2D game engine applying multiple design patterns and architecture experiments.",
-    status: "On Hold",
+    status: "Active Development",
+  order: 10,
   tags: ["Solo", "C++", "Learning", "Engine", "Featured"]
   },
 
   kobeditor: {
     link: "./Kobeditor",
-    img: "./images/project-covers/Pompeii.png",
-    title: "Kobeditor | Kobengine Editor",
+    img: "./images/project-covers/Kobeditor.png",
+    title: "Kobeditor | Editor",
     description:
       "Editor tooling built on top of Kobengine for scene and asset management.",
     status: "Active Development",
+  order: 20,
   tags: ["Solo", "C++", "Engine", "Learning", "Featured"]
+  },
+
+  kobengine2D: {
+    link: "./Kobengine2D",
+    img: "./images/project-covers/Kobengine2D.png",
+    title: "Kobengine2D",
+    description:
+      "A small custom 2D game engine applying multiple design patterns and architecture experiments.",
+    status: "On Hold",
+  order: 60,
+  tags: ["Solo", "C++", "Learning", "Engine", "Featured"]
   },
 
   cpu_raytracer: {
@@ -36,6 +50,7 @@ export const projects = {
     description:
       "Software ray tracer built to understand global illumination and ray tracing fundamentals.",
     status: "Finished",
+  order: 30,
   tags: ["Solo", "C++", "CPU", "Learning", "Featured"]
   },
 
@@ -46,16 +61,18 @@ export const projects = {
     description:
       "Hybrid software + hardware rasterizer exploring DX11 and rasterization math.",
     status: "Finished",
+  order: 40,
   tags: ["Solo", "DX11", "C++", "Learning", "Featured"]
   },
 
   ozone_absorption: {
     link: "./OzoneAbsorption",
     img: "./images/project-covers/GradworkDAE.png",
-    title: "Ozone Absorption (Atmospheric Scattering)",
+    title: "Ozone Absorption | Atmospheric Scattering",
     description:
       "Research project studying ozone absorption in single scattering atmospheric models using Vulkan.",
     status: "Finished",
+  order: 50,
   tags: ["Solo", "Vulkan", "Research", "C++", "Learning", "Featured"]
   },
 
@@ -66,6 +83,7 @@ export const projects = {
     description:
       "Chaotic co-op boss fighting game built for two players.",
     status: "Finished",
+  order: 70,
   tags: ["Game", "Unity", "Group", "C#", "Featured"]
   },
 
@@ -76,7 +94,8 @@ export const projects = {
     description:
       "Remake of early Kirby's Adventure levels in C++.",
     status: "Finished",
-  tags: ["Solo", "C++", "Game", "Learning", "Featured"]
+  order: 90,
+  tags: ["Solo", "C++", "Game", "Learning"]
   },
 
   burger_time: {
@@ -86,6 +105,7 @@ export const projects = {
     description:
       "Remake of classic Burger Time built in custom C++ 2D engine.",
     status: "Finished",
+  order: 100,
   tags: ["Solo", "C++", "Engine", "Game", "Learning"]
   },
 
@@ -96,6 +116,7 @@ export const projects = {
     description:
       "Endless survival horror prototype built in Unity.",
     status: "Prototype",
+  order: 110,
   tags: ["Solo", "Unity", "Game", "Learning", "C#"]
   },
 
@@ -106,6 +127,7 @@ export const projects = {
     description:
       "2D game built using Plane Perspective Geometric Algebra instead of traditional vector math.",
     status: "Prototype",
+  order: 130,
   tags: ["Solo", "Game", "Research", "Learning", "C++"]
   },
 
@@ -116,6 +138,7 @@ export const projects = {
     description:
       "Small atmospheric 3D diorama created with Blender and Photoshop.",
     status: "Finished",
+  order: 120,
   tags: ["Solo", "Art", "Learning"]
   },
   
@@ -126,6 +149,7 @@ export const projects = {
     description:
       "A gamified tool that helps psychologists map out the protective network of children who deal with domestic violence.",
     status: "Finished",
+  order: 80,
   tags: ["Group", "Unity", "C#", "Game", "Featured", "Client"]
   },
 }

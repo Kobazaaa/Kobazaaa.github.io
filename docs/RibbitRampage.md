@@ -36,16 +36,64 @@ We also posted a DevLog each week over on our [Itch page](https://vikkever.itch.
 ## My Job
 
 My responsibilities and contributions included:
-<div class='vp-doc'>
 
-- Unique attacks (Soundwave, Sonic Boom, Talon & Wing Attacks)
-- UI implementation
-- Game state screens (Main Menu, Game Over)
-- Audio
-- Polish such as platforms and lillypads moving in the wind
-- Phase transitions
-- ...
+<ContributionsGrid :columns="3" :show-search="false" :show-sort="false" :items="[
+  {
+    title: 'Unique Frog attacks',
+    group: 'Gameplay',
+    description: 'Implemented multiple combat moves (Soundwave & Sonic Boom) for the players.'
+  },
+  {
+    title: 'Unique Heron attacks',
+    group: 'Gameplay',
+    description: 'Implemented multiple combat moves (Talon & Wing attacks) for the boss.'
+  },
+  {
+    title: 'UI implementation',
+    group: 'UI',
+    description: 'Built and integrated core UI flows and feedback during gameplay.'
+  },
+  {
+    title: 'Game state screens',
+    group: 'UI',
+    description: 'Implemented screens like Main Menu and Game Over.'
+  },
+  {
+    title: 'Combat feedback',
+    group: 'Polish',
+    description: 'Improved clarity with small polish passes so attacks and phase changes feel readable during chaos.'
+  },
+  {
+    title: 'Audio',
+    group: 'Polish',
+    description: 'Integrated and balanced audio to support gameplay feedback.'
+  },
+  {
+    title: 'Environmental polish',
+    group: 'Polish',
+    description: 'Added polish like platforms and lily pads moving in the wind.'
+  },
+  {
+    title: 'Phase transitions',
+    group: 'Systems',
+    description: 'Implemented phase transitions to structure the boss fight pacing and change the level layout.'
+  },
+  {
+    title: 'Boss behaviour implementation',
+    group: 'Systems',
+    description: 'Implemented boss attack behaviour patterns and the logic that triggers them during the fight.'
+  },
+  {
+    title: 'More...',
+    group: 'x',
+  }
+]" />
+
+<div style="margin-top: 12px;">
+
 </div>
+
+## Extra Info
 
 ### Soundwave
 The soundwave is the frog's base attack, used to damage and scare away the hungry heron. However, if you accidentally hit your teammate, it will push them around the arena, so aim carefully!
@@ -66,10 +114,12 @@ The Wing Attack is fast and hard to dodge. The heron sweeps its wings across the
 import { VPTeamMembers } from 'vitepress/theme';
 </script>
 
+<div style="width: 75%; margin: 20px auto;">
 <VPTeamMembers size="small" :members="[
   {
     name: 'Twan Paemeleire',
     title: 'Programmer',
+  avatar: 'https://unavatar.io/linkedin/twan-paemeleire',
     links: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/twan-paemeleire/' },
     ]
@@ -77,6 +127,7 @@ import { VPTeamMembers } from 'vitepress/theme';
   {
     name: 'Kobe Dereyne',
     title: 'Programmer',
+  avatar: 'https://unavatar.io/linkedin/kobe-dereyne-925ba02a3',
     links: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/kobe-dereyne-925ba02a3/' },
     ]
@@ -84,6 +135,7 @@ import { VPTeamMembers } from 'vitepress/theme';
   {
     name: 'Viktor Cloes',
     title: 'Programmer',
+  avatar: 'https://unavatar.io/linkedin/viktor-cloes-81587334b',
     links: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/viktor-cloes-81587334b/'},
     ]
@@ -91,6 +143,7 @@ import { VPTeamMembers } from 'vitepress/theme';
   {
     name: 'Eleonora Ciccarelli',
     title: 'Artist',
+  avatar: 'https://unavatar.io/linkedin/eleonora-ciccarelli',
     links: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/eleonora-ciccarelli/' },
     ]
@@ -98,10 +151,12 @@ import { VPTeamMembers } from 'vitepress/theme';
   {
     name: 'Paula Szklarz',
     title: 'Artist',
+  avatar: 'https://unavatar.io/linkedin/paula-szklarz',
     links: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/paula-szklarz/' },
     ]
   },
 ]" />
 
+</div>
 </div>
