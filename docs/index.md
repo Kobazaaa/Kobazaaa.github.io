@@ -50,6 +50,14 @@ layout: page
     LinkedIn
   </a>
 </p>
+<div class="contact-divider">
+<p class="social-link">
+  <a href="/Resume" class="link-item accent">
+    <FileText :size="22"/>
+    View my Resume
+  </a>
+</p>
+</div>
 </div>
 
 </div>

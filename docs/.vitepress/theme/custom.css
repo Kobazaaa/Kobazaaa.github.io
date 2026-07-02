@@ -263,3 +263,35 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Separates a call-to-action (e.g. Resume) from a preceding list of contact links */
+.contact-divider {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+html:not(.dark) .contact-divider {
+  border-top-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Filled call-to-action variant of .link-item, for actions that aren't just contact info */
+.link-item.accent {
+  background-color: #42b883;
+  border-color: #42b883;
+  color: #fff;
+  font-weight: 600;
+}
+.link-item.accent:hover {
+  background-color: #379970;
+  border-color: #379970;
+  color: #fff;
+}
+html:not(.dark) .link-item.accent {
+  background-color: #42b883;
+  border-color: #42b883;
+  color: #fff;
+}
+html:not(.dark) .link-item.accent:hover {
+  background-color: #379970;
+  border-color: #379970;
+}
