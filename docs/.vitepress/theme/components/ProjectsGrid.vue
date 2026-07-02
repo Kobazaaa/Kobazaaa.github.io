@@ -216,7 +216,7 @@ const filteredKeys = computed(() => {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
   /* Keep the tag list and the settings/search cluster on the same row: the
      taglist absorbs all shrinking (and wraps its own tags internally), so
      the right-hand cluster never gets bumped onto a new line. */
@@ -272,13 +272,16 @@ const filteredKeys = computed(() => {
   line-height: 1;
 }
 
-/* Right: AND/OR + show/hide tags + reset + search, with the result count stacked directly under */
+/* Right: AND/OR + show/hide tags + reset + search, with the result count stacked directly under.
+   A left divider keeps it visually distinct from the tag filters. */
 .pg-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
   margin-left: auto;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
   /* Never shrink or wrap onto a new line — all the give/take when space
      is tight comes from the taglist next to it. */
   flex: 0 0 auto;
@@ -488,6 +491,7 @@ const filteredKeys = computed(() => {
   .pg-toolbar {
     flex-wrap: wrap;
     align-items: stretch;
+    gap: 16px;
   }
 
   .pg-right {
@@ -495,11 +499,23 @@ const filteredKeys = computed(() => {
     width: 100%;
     align-items: flex-end;
     margin-left: 0;
+    /* Stacked below the tags now, so the divider moves from the left edge to the top. */
+    padding-left: 0;
+    border-left: none;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
   }
 
   .pg-controls {
     justify-content: flex-end;
     width: 100%;
+    gap: 8px;
+  }
+
+  .pg-pill,
+  .pg-segment {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .pg-search-wrap.open {
@@ -524,6 +540,10 @@ html:not(.dark) .pg-mode {
 
 html:not(.dark) .pg-segment + .pg-segment {
   border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+html:not(.dark) .pg-right {
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 html:not(.dark) .pg-clear {
