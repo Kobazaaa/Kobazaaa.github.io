@@ -36,4 +36,16 @@ defineProps({
   vertical-align: middle;
   transition: color 0.3s ease;
 }
+
+/* Every card that embeds <IconTitle> (TextCard, BadgeCard, SkillCard) wants its
+   icon to light up on hover, but a parent's `:hover` can't reach into a child
+   component's scoped styles — so that highlight belongs here, once, not
+   duplicated (and silently dead) in each consumer. */
+.header:hover .lucide-icon {
+  color: #42b883;
+}
+
+html:not(.dark) .lucide-icon {
+  color: #333;
+}
 </style>

@@ -195,7 +195,9 @@ html:not(.dark) .project-card-title {
 }
 
 html:not(.dark) .project-card-tag {
-  background: #f5f5f5;
+  background: #eee;
+  color: #555;
+  border-color: #ccc;
 }
 
 </style>

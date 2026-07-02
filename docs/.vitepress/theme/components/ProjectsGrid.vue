@@ -258,7 +258,9 @@ const filteredKeys = computed(() => {
 
 .pg-tag.active {
   background: #42b883;
-  color: #fff;
+  /* White-on-#42b883 is under 3:1 contrast — too low to read comfortably.
+     Dark text keeps the brand green but stays legible in both themes. */
+  color: #10241a;
   border-color: transparent;
 }
 
@@ -326,7 +328,7 @@ const filteredKeys = computed(() => {
 
 .pg-segment.active {
   background: #42b883;
-  color: #fff;
+  color: #10241a;
 }
 
 .pg-pill {
@@ -351,7 +353,7 @@ const filteredKeys = computed(() => {
 
 .pg-pill.active {
   background: #42b883;
-  color: #fff;
+  color: #10241a;
   border-color: transparent;
 }
 
@@ -523,30 +525,55 @@ const filteredKeys = computed(() => {
   }
 }
 
-/* light mode */
+/* light mode — solid card colors (matching .link-item elsewhere) instead of
+   near-invisible white-on-white overlays, so text and borders stay readable. */
 html:not(.dark) .pg-tag,
 html:not(.dark) .pg-search,
 html:not(.dark) .pg-icon-btn,
 html:not(.dark) .pg-pill,
 html:not(.dark) .pg-mode {
-  border-color: rgba(0, 0, 0, 0.12);
-  background: rgba(0, 0, 0, 0.02);
+  border-color: #ccc;
+  background: #f5f5f5;
+}
+
+html:not(.dark) .pg-tag:not(.active),
+html:not(.dark) .pg-segment:not(.active),
+html:not(.dark) .pg-pill:not(.active) {
+  color: #333;
 }
 
 html:not(.dark) .pg-segment + .pg-segment {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: #ccc;
+}
+
+html:not(.dark) .pg-segment:hover {
+  background: rgba(46, 125, 50, 0.10);
+}
+
+html:not(.dark) .pg-pill:hover {
+  border-color: rgba(46, 125, 50, 0.45);
+  background: rgba(46, 125, 50, 0.08);
+}
+
+html:not(.dark) .pg-tag:hover {
+  border-color: rgba(46, 125, 50, 0.45);
+}
+
+html:not(.dark) .pg-icon-btn:hover {
+  border-color: rgba(46, 125, 50, 0.45);
+  background: rgba(46, 125, 50, 0.08);
 }
 
 html:not(.dark) .pg-right {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: #ccc;
 }
 
 html:not(.dark) .pg-clear {
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 html:not(.dark) .pg-clear:hover {
-  background: rgba(0, 0, 0, 0.07);
+  background: rgba(0, 0, 0, 0.10);
 }
 
 html:not(.dark) .pg-icon-btn.active {

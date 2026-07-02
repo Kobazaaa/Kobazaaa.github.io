@@ -46,37 +46,10 @@ defineProps({
     inset 0 1px 1px rgba(255, 255, 255, 0.05),
     0 2px 4px rgba(0, 0, 0, 0.3);
 }
-.header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: white;
-}
-
-.lucide-icon {
-  width: 32px;
-  height: 32px;
-  color: #ccc;
-  flex-shrink: 0;
-  display: inline-block;
-  vertical-align: middle;
-  transition: color 0.3s ease;
-}
-html:not(.dark) .lucide-icon {
-  color: #333;
-}
-.card:hover .lucide-icon {
-  color: #42b883;
-}
-
 /* light mode */
 html:not(.dark) .card {
   background-color: #f5f5f5;
   border-color: #ccc;
   background: linear-gradient(135deg, #f4f4f4, #eaeaea);
-}
-
-html:not(.dark) .header {
-  color: #222;
 }
 </style>

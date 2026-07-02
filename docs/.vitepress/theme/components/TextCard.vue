@@ -33,23 +33,6 @@ defineProps({
   gap: 10px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: white;
-}
-
-.lucide-icon {
-  width: 24px;
-  height: 24px;
-  color: #ccc;
-}
-
-.card:hover .lucide-icon {
-  color: #42b883;
-}
-
 .description {
   margin: 0;
   opacity: 0.85;
@@ -68,13 +51,5 @@ li {
 html:not(.dark) .card {
   background: linear-gradient(135deg, #f4f4f4, #eaeaea);
   border-color: #ccc;
-}
-
-html:not(.dark) .header {
-  color: #222;
-}
-
-html:not(.dark) .lucide-icon {
-  color: #333;
 }
 </style>

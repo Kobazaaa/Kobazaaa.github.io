@@ -77,21 +77,6 @@ const onMouseLeave = (e) => {
   color: white;
 }
 
-.lucide-icon {
-  width: 32px;
-  height: 32px;
-  color: #ccc;
-  flex-shrink: 0;
-  display: inline-block;
-  vertical-align: middle;
-  transition: color 0.3s ease;
-}
-html:not(.dark) .lucide-icon {
-  color: #333;
-}
-.skill-card:hover .lucide-icon {
-  color: #42b883;
-}
 .skill-card:hover {
   border-color: #42b883;
 }
