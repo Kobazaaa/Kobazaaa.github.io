@@ -10,7 +10,7 @@ hero:
       link: https://github.com/Kobazaaa/Kirbys_Adventure
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## Goals
 
@@ -21,9 +21,8 @@ Since we were beginner programmers, we were given a simple, barebones framework 
 ## Game Showoff
 
 <div style="max-width: 65%; margin: 24px auto; ">
-<div style="padding:56.25% 0 0 0;position:relative;">
-
-  <iframe src="https://player.vimeo.com/video/1069499095?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="border: 3px solid #42b883; border-radius: 15px; position:absolute;top:0;left:0;width:100%;height:100%;" title="2324_PROG2_Dereyne_Kobe_KirbysAdventure"></iframe>
+<div class="video-embed">
+  <iframe src="https://player.vimeo.com/video/1069499095?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" title="2324_PROG2_Dereyne_Kobe_KirbysAdventure"></iframe>
 </div>
 </div>
 
@@ -35,7 +34,7 @@ Since we were beginner programmers, we were given a simple, barebones framework 
 
 <div style="max-width: 100%; margin: 24px auto;">
   <img src="/images/Kirby/ClassHierarchy.png" alt="Class Hierarchy"
-       style="border: 3px solid #42b883; border-radius: 15px;" />
+       class="framed-image" />
 </div>
 
 </div>

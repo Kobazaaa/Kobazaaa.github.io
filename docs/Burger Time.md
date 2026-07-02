@@ -10,7 +10,7 @@ hero:
       link: https://github.com/Kobazaaa/BurgerTime
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## Kobengine
 
@@ -18,7 +18,7 @@ This remake of *Burger Time* was entirely made in my custom 2D game engine [Kobe
 
 <div style="max-width: 100%; margin: 24px auto; text-align: center;">
   <img src="/images/BurgerTime/BurgerTime.png" alt="BurgerTime"
-       style="border: 3px solid #42b983; border-radius: 15px; display: inline-block;" />
+       class="framed-image" style="display: inline-block;" />
 </div>
 <div style="width: 90%; margin: auto;">
 <ImageGrid :images="[

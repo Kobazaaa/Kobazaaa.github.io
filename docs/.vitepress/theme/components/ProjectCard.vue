@@ -38,27 +38,13 @@
 import { computed } from 'vue'
 import { projects } from '../projects'
 import { TAG_COLORS } from '../utils/tagColors'
+import { statusBadgeClass } from '../utils/statusBadge'
 
 const props = defineProps({
   project: String
 })
 const data = computed(() => projects[props.project] ?? null)
-const badgeClass = computed(() => {
-  const status = data.value?.status?.toLowerCase()
-  switch (status) {
-    case 'finished':
-      return 'badge-completed'
-    case 'on hold':
-      return 'badge-on-hold'
-    case 'active':
-    case 'active development':
-      return 'badge-active-development'
-    case 'prototype':
-      return 'badge-prototype'
-    default:
-      return 'badge-default'
-  }
-})
+const badgeClass = computed(() => statusBadgeClass(data.value?.status))
 
 const HIDDEN_TAGS = new Set(['Featured', 'Solo', 'Group'])
 
@@ -192,37 +178,6 @@ const normalizedTags = computed(() =>
   font-size: 0.85rem;
   color: #aaa;
   line-height: 1.4;
-}
-
-/* Badge colors */
-.badge-completed {
-  background-color: rgba(85, 174, 238, 0.3);
-  border-color: rgba(102, 204, 255, 0.4);
-  color: hsl(190, 50%, 75%);
-}
-
-.badge-on-hold {
-  background-color: rgba(200, 120, 120, 0.4);
-  border-color: rgba(200, 120, 120, 0.35);
-  color: #dfb5b5;
-}
-
-.badge-active-development {
-  background-color: rgba(72, 206, 140, 0.4);
-  border-color: rgba(120, 200, 160, 0.35);
-  color: #b9dfcf;
-}
-
-.badge-prototype {
-  background-color: rgba(170, 160, 220, 0.4);
-  border-color: rgba(170, 160, 220, 0.3);
-  color: #beb3e3;
-}
-
-.badge-default {
-  background-color: rgba(150, 150, 150, 0.4);
-  border-color: rgba(160, 160, 160, 0.3);
-  color: #ccc;
 }
 
 /* light mode */

@@ -10,7 +10,7 @@ hero:
       link: https://ttritar.itch.io/kuisje-huisje
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## About
 Kuisje Huisje is a gamified tool that helps psychologists map out a child’s protective network. 

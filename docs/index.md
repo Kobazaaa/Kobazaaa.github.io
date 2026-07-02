@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
 
@@ -56,104 +56,7 @@ layout: page
 
 ## Projects
 
-<script setup>
-import { ref, computed } from 'vue'
-import { projects } from './.vitepress/theme/projects'
-
-const selectedTags = ref(['Featured'])
-const expanded = ref(false)
-const mode = ref('AND') // 'OR' or 'AND'
-
-// Count occurrences of each tag
-const tagCounts = computed(() => {
-    const counts = {}
-    Object.values(projects).forEach(p => (p.tags || []).forEach(t => (counts[t] = (counts[t] || 0) + 1)))
-    return counts
-})
-
-// All tags sorted: Featured, Solo, Group, then alphabetical
-const allTags = computed(() =>
-    Object.keys(tagCounts.value).sort((a, b) => {
-        const priority = { Featured: 0, Solo: 1, Group: 2 }
-        const pa = Object.prototype.hasOwnProperty.call(priority, a) ? priority[a] : 3
-        const pb = Object.prototype.hasOwnProperty.call(priority, b) ? priority[b] : 3
-        if (pa !== pb) return pa - pb
-        return a.localeCompare(b)
-    })
-)
-
-function toggleTag(tag) {
-    const current = selectedTags.value
-    const idx = current.indexOf(tag)
-
-    // If currently only Featured is selected and user selects a different tag,
-    // remove Featured so filtering starts from the user's chosen tags.
-    if (idx === -1 && current.length === 1 && current[0] === 'Featured' && tag !== 'Featured') {
-        selectedTags.value = [tag]
-        return
-    }
-
-    if (idx === -1) current.push(tag)
-    else current.splice(idx, 1)
-}
-
-function clearTags() {
-    // Reset to the subtle default: only Featured
-    selectedTags.value = ['Featured']
-}
-
-const filteredProjects = computed(() => {
-    const tags = selectedTags.value
-    if (!tags.length) return Object.keys(projects)
-    return Object.entries(projects)
-        .filter(([, p]) => {
-            const pTags = p.tags || []
-            if (mode.value === 'AND') {
-                return tags.every(t => pTags.includes(t))
-            }
-            // default OR
-            return tags.some(t => pTags.includes(t))
-        })
-        .map(([k]) => k)
-})
-
-// Expose visible tags for rendering
-const visibleTags = computed(() => allTags.value)
-</script>
-
-<div class="tag-area-container">
-    <div class="tag-left">
-        <div class="tag-strip" v-show="expanded" :class="{ 'has-filter': selectedTags.length > 0 && !(selectedTags.length === 1 && selectedTags[0] === 'Featured') }">
-        </div>
-        <div class="tag-filter-bar" v-show="expanded">
-            <div class="tag-list">
-                <button
-                    v-for="t in visibleTags"
-                    :key="t + '-full'"
-                    @click="toggleTag(t)"
-                    :class="['tag-pill', { active: selectedTags.includes(t), featured: t === 'Featured' }]">
-                    {{ t }} <small class="tag-count">{{ tagCounts[t] }}</small>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="tag-right" style="margin-bottom:0.7rem;">
-        <button class="tag-action" @click="expanded = !expanded">{{ expanded ? 'Hide tags' : 'Show tags' }}</button>
-        <button class="tag-action" @click="clearTags">Clear</button>
-        <!-- panel shown under the buttons when expanded -->
-        <div v-show="expanded" class="tag-controls-panel">
-            <span class="panel-count">{{ filteredProjects.length }} result(s)</span>
-            <div class="mode-toggle" role="group" aria-label="Filter mode">
-                <button :class="['mode-btn', { active: mode === 'OR' } ]" @click="mode = 'OR'">OR</button>
-                <button :class="['mode-btn', { active: mode === 'AND' } ]" @click="mode = 'AND'">AND</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="projects-grid">
-    <ProjectCard v-for="key in filteredProjects" :key="key" :project="key" />
-</div>
+<ProjectsGrid />
 
 ## Skills
 

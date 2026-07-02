@@ -10,7 +10,7 @@ hero:
       link: https://github.com/Kobazaaa/GEOA_ExamAssignment_PPGA_ArcaderGame
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## Goals
 The goal of the project was to make a simple 2D arcader game using only PPGA math, and incorporating the special features it has into the gameplay.
@@ -27,11 +27,8 @@ The portals can be moved around by the player. If the bear enter one of the port
 
 <div style="width: 90%; margin: 24px auto;">
 <img src="/images/PPGAGame/Gameplay.png"
-     style="border: 3px solid #42b883;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-            transition: transform 0.2s ease;
-"/>
+     class="framed-image"
+     style="box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); transition: transform 0.2s ease;"/>
 </div>
 
 ## PPGA Report

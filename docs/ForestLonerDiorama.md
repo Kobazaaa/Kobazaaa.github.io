@@ -10,7 +10,7 @@ hero:
       link: https://skfb.ly/pzCnL
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## The Forest Loner
 

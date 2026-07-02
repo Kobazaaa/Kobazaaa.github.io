@@ -12,6 +12,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { statusBadgeClass } from '../utils/statusBadge'
 
 const props = defineProps({
   link: String,
@@ -20,20 +21,7 @@ const props = defineProps({
   status: String,
 })
 
-const badgeClass = computed(() => {
-  switch (props.status?.toLowerCase()) {
-    case 'finished':
-      return 'badge-completed'
-    case 'on hold':
-      return 'badge-on-hold'
-    case 'active development':
-      return 'badge-active-development'
-    case 'prototype':
-      return 'badge-prototype'
-    default:
-      return 'badge-default'
-  }
-})
+const badgeClass = computed(() => statusBadgeClass(props.status))
 </script>
 
 <style scoped>
@@ -91,30 +79,5 @@ const badgeClass = computed(() => {
   text-transform: uppercase;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
   letter-spacing: 0.5px;
-}
-.badge-completed {
-  background-color: rgba(85, 174, 238, 0.3);
-  border-color: rgba(102, 204, 255, 0.4);
-  color: hsl(190, 50%, 75%);
-}
-.badge-on-hold {
-  background-color: rgba(200, 120, 120, 0.4);
-  border-color: rgba(200, 120, 120, 0.35);
-  color: #dfb5b5;
-}
-.badge-active-development {
-  background-color: rgba(72, 206, 140, 0.4);
-  border-color: rgba(120, 200, 160, 0.35);
-  color: #b9dfcf;
-}
-.badge-prototype {
-  background-color: rgba(170, 160, 220, 0.4);
-  border-color: rgba(170, 160, 220, 0.3);
-  color: #beb3e3;
-}
-.badge-default {
-  background-color: rgba(150, 150, 150, 0.4);
-  border-color: rgba(160, 160, 160, 0.3);
-  color: #ccc;
 }
 </style>

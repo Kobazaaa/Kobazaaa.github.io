@@ -10,7 +10,7 @@ hero:
       link: https://github.com/Kobazaaa/Kobengine
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## Framework Features
 

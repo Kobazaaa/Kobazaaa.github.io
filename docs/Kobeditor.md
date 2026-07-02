@@ -10,7 +10,7 @@ hero:
       link: https://github.com/Kobazaaa/Tadpole
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 This page is coming soon.
 

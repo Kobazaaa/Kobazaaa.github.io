@@ -184,151 +184,61 @@ html.dark .link-item img {
   margin-bottom: 1rem;
 }
 
-/* Tag filter UI */
-.tag-filter-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0rem 0 1rem;
-  flex-wrap: wrap;
-  /* allow usage inside flex containers */
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.tag-list {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-.tag-pill {
-  background: rgba(255,255,255,0.02);
-  color: #cfcfcf;
-  border: 1px solid rgba(255,255,255,0.04);
-  padding: 6px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-.tag-pill .tag-count { opacity: 0.7; font-size: 0.8rem; padding-left: 4px }
-.tag-pill.featured { border-style: dashed; opacity: 0.95 }
-.tag-pill.active {
-  background: #42b883;
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 4px 12px rgba(46,125,50,0.12);
-}
-
-.tag-pill.active {
-  position: relative;
-  padding-right: 28px;
-}
-.tag-pill.active::after {
-  content: '✕';
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.85rem;
-  opacity: 1;
-  transition: opacity 0.12s ease;
-  pointer-events: none;
-}
-
-.tag-action {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  min-width: 82px;
-  padding: 6px 12px;
-  margin-left: 6px;
-  background: none;
-  border: 1px solid #555;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #ddd;
-}
-.tag-action:hover { border-color: #5fa67a }
-
-.tag-info { margin-left: 12px; color: #999; font-size: 0.95rem }
-
-
-.tag-strip { display: flex; align-items: center; gap: 12px; }
-
-.tag-strip.has-filter .tag-pill:not(.active) { opacity: 0.45 }
-
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
 
-.filter-toggle { background: none; border: 1px solid #666; padding: 6px 10px; border-radius: 6px; cursor: pointer; color: #ddd }
-
-
-/* Light-mode overrides for tag UI */
-html:not(.dark) .tag-pill {
-  background: rgba(0,0,0,0.03);
-  color: #2b2b2b;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-html:not(.dark) .tag-pill .tag-count { color: #666 }
-html:not(.dark) .tag-pill.featured { border-style: dashed; opacity: 0.95 }
-html:not(.dark) .tag-pill.active {
-  background: #42b883;
-  box-shadow: 0 6px 18px rgba(76,168,107,0.08);
+/* Status badges shared by ProjectCard and MiniProjectCard (see utils/statusBadge.js) */
+.badge-completed {
+  background-color: rgba(85, 174, 238, 0.3);
+  border-color: rgba(102, 204, 255, 0.4);
+  color: hsl(190, 50%, 75%);
 }
 
-html:not(.dark) .tag-action {
-  background: none;
-  border: 1px solid #ccc;
-  color: #333;
+.badge-on-hold {
+  background-color: rgba(200, 120, 120, 0.4);
+  border-color: rgba(200, 120, 120, 0.35);
+  color: #dfb5b5;
 }
-html:not(.dark) .tag-action:hover { border-color: #5fa67a }
 
-html:not(.dark) .tag-info { color: #444 }
-
-/* Layout for the tag area container added in index.md */
-.tag-area-container {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+.badge-active-development {
+  background-color: rgba(72, 206, 140, 0.4);
+  border-color: rgba(120, 200, 160, 0.35);
+  color: #b9dfcf;
 }
-.tag-left { flex: 1 1 auto; min-width: 0; }
-.tag-right { flex: 0 0 auto; display: flex; gap: 8px; align-items: center; white-space: nowrap; position: relative; }
 
-/* Panel that appears under the right-side buttons when expanded */
-.tag-controls-panel {
+.badge-prototype {
+  background-color: rgba(170, 160, 220, 0.4);
+  border-color: rgba(170, 160, 220, 0.3);
+  color: #beb3e3;
+}
+
+.badge-default {
+  background-color: rgba(150, 150, 150, 0.4);
+  border-color: rgba(160, 160, 160, 0.3);
+  color: #ccc;
+}
+
+/* Shared page/content layout helpers used across markdown pages */
+.page-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.video-embed {
+  padding: 56.25% 0 0 0;
+  position: relative;
+}
+.video-embed iframe {
+  border: 3px solid #42b883;
+  border-radius: 15px;
   position: absolute;
-  right: 0;
-  top: calc(100% + 8px);
-  display: flex;
-  gap: 3px;
-  align-items: center;
-  white-space: nowrap;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-.tag-controls-panel .panel-count { color: #ccc; font-size: 0.95rem; margin-right: 6px }
 
-html:not(.dark) .tag-controls-panel { background: rgba(0,0,0,0.03); border-color: #ddd }
-
-/* Ensure the filter bar contents (pills + info) are centered vertically */
-.tag-filter-bar { align-items: center; }
-
-/* Ensure tag list scrolls horizontally inside the left area without pushing right controls */
-.tag-left .tag-list { overflow-x: auto; max-width: 100%; display:flex; gap:8px; }
-.tag-left .tag-list .tag-pill { white-space: nowrap }
-
-/* Mode toggle (OR / AND) */
-.mode-toggle { display: inline-flex; border-radius: 6px; overflow: hidden; border: 1px solid #444; }
-.mode-btn { background: none; border: none; padding: 6px 10px; cursor: pointer; color: #ddd; }
-.mode-btn.active { background: #42b883; color: #fff; }
-.mode-btn:focus { outline: 2px solid rgba(46,125,50,0.2); }
-
-html:not(.dark) .mode-btn { color: #333 }
-html:not(.dark) .mode-toggle { border-color: #ccc }
-html:not(.dark) .mode-btn.active { background: #42b883; color: #fff }
+.framed-image {
+  border: 3px solid #42b883;
+  border-radius: 15px;
+}

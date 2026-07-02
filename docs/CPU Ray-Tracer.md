@@ -10,7 +10,7 @@ hero:
       link: https://github.com/Kobazaaa/GP1_Raytracer
 ---
 
-<div style="max-width: 1300px; margin: 0 auto; padding: 2rem;">
+<div class="page-wrapper">
 
 ## Features
 

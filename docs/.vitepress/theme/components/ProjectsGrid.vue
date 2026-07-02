@@ -1,8 +1,28 @@
 <template>
   <div class="pg-root">
-    <div class="pg-toolbar">
-      <div class="pg-controls">
-        <div class="pg-mode" role="group" aria-label="Tag filter mode">
+    <div class="pg-toolbar" role="search">
+      <div v-if="showSearch" class="pg-search">
+        <Search class="pg-icon" aria-hidden="true" />
+        <input
+          v-model.trim="query"
+          class="pg-input"
+          type="search"
+          :placeholder="searchPlaceholder"
+          aria-label="Search projects"
+        />
+        <button
+          class="pg-clear"
+          type="button"
+          @click="query = ''"
+          aria-label="Clear search"
+          :class="{ 'is-visible': query.length }"
+        >
+          <X class="pg-icon" aria-hidden="true" />
+        </button>
+      </div>
+
+      <div class="pg-controls" :class="{ 'is-compact': !showSearch }">
+    <div class="pg-mode" role="group" aria-label="Tag filter mode">
           <button
             type="button"
       :class="['pg-segment', { active: mode === 'AND' }]"
@@ -64,6 +84,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import { Search, X } from 'lucide-vue-next'
 import ProjectCard from './ProjectCard.vue'
 import { projects } from '../projects'
 
@@ -75,9 +96,14 @@ const props = defineProps({
   defaultSelectedTags: {
     type: Array,
     default: () => ['Featured']
+  },
+  searchPlaceholder: {
+    type: String,
+    default: 'Search projects…'
   }
 })
 
+const query = ref('')
 const expanded = ref(false)
 const mode = ref('AND') // AND | OR
 const selectedTags = ref([...props.defaultSelectedTags])
@@ -117,19 +143,36 @@ function toggleTag(tag) {
 }
 
 function reset() {
+  query.value = ''
   expanded.value = false
   selectedTags.value = [...props.defaultSelectedTags]
 }
 
 const filteredKeys = computed(() => {
+  const q = query.value.toLowerCase()
   const tags = selectedTags.value
+  const onlyDefaultTagSelected =
+    tags.length === 1 &&
+    tags[0] === props.defaultTag
+
+  // QoL: if the user is actively searching and they haven't chosen any real filters
+  // (only the default tag is selected), don't restrict search results to that default tag.
+  const shouldApplyTagFilter = !(q && onlyDefaultTagSelected)
+
   let entries = Object.entries(projects)
 
-  if (tags.length) {
+  if (tags.length && shouldApplyTagFilter) {
     entries = entries.filter(([, p]) => {
       const pTags = p.tags || []
       if (mode.value === 'AND') return tags.every((t) => pTags.includes(t))
       return tags.some((t) => pTags.includes(t))
+    })
+  }
+
+  if (q) {
+    entries = entries.filter(([, p]) => {
+      const hay = `${p.title}\n${p.description}\n${(p.tags || []).join(' ')}\n${p.status || ''}`.toLowerCase()
+      return hay.includes(q)
     })
   }
 
@@ -152,6 +195,80 @@ const filteredKeys = computed(() => {
   gap: 12px;
   flex-wrap: wrap;
   margin: 10px 0 10px;
+}
+
+.pg-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  min-width: min(520px, 100%);
+  flex: 1 1 320px;
+}
+
+.pg-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--vp-c-text-1);
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Prevent the browser-provided clear (X) icon on search inputs */
+.pg-input::-ms-clear,
+.pg-input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.pg-input::-webkit-search-decoration,
+.pg-input::-webkit-search-cancel-button,
+.pg-input::-webkit-search-results-button,
+.pg-input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.pg-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.75;
+  flex: 0 0 auto;
+}
+
+.pg-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  cursor: pointer;
+
+  /* reserve space without causing layout shift */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pg-clear.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.pg-clear:hover {
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .pg-controls {
@@ -288,6 +405,7 @@ const filteredKeys = computed(() => {
 }
 
 /* light mode */
+html:not(.dark) .pg-search,
 html:not(.dark) .pg-pill,
 html:not(.dark) .pg-mode,
 html:not(.dark) .pg-results {
@@ -297,5 +415,13 @@ html:not(.dark) .pg-results {
 
 html:not(.dark) .pg-segment + .pg-segment {
   border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+html:not(.dark) .pg-clear {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html:not(.dark) .pg-clear:hover {
+  background: rgba(0, 0, 0, 0.07);
 }
 </style>
