@@ -31,7 +31,7 @@ Performance differences can be measured directly through profiling. Evaluating v
 
 The project is built on a **physically-based single scattering model**, implemented from scratch using **Vulkan**. Unlike many real-time approaches, this implementation avoids lookup tables and instead evaluates the scattering integrals directly in the shader using numerical integration.
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px auto">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; margin: 24px auto">
 
 <TextCard
   title="Model"
@@ -53,7 +53,7 @@ The project is built on a **physically-based single scattering model**, implemen
 
 #### Shader Flow
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px auto">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; margin: 24px auto">
 
 <TextCard
   title="Vertex Shader"
@@ -75,7 +75,7 @@ The project is built on a **physically-based single scattering model**, implemen
 
 ## Pairwise Comparison
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(750px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap: 24px;">
 
 <ImageSlider
   :images="[
@@ -102,7 +102,7 @@ The project is built on a **physically-based single scattering model**, implemen
 
 ## Results
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 49%)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px;">
 
 <TextCard
   title="Survey Findings"

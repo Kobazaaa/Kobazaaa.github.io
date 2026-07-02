@@ -13,7 +13,7 @@ layout: page
 </div>
 
   <!-- Bio text -->
-  <div style="flex: 2 0 300px; min-width: auto; max-width: 600px;">
+  <div style="flex: 2 1 300px; min-width: 0; max-width: 600px;">
     <h2 style="margin-top: 0;">Kobe Dereyne</h2>
   <p class="subtitle">Graphics & Engine Programmer</p>
     <p style="margin-top: 10px;">

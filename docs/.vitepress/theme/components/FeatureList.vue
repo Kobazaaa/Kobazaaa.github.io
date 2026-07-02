@@ -75,17 +75,17 @@ function clearDescription() {
 <style scoped>
 @media (max-width: 600px) {
   .feature-container {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column !important;
+    gap: 20px !important;
   }
   .feature-list {
-    width: 100%;
-    min-width: auto;
+    width: 100% !important;
+    min-width: auto !important;
     grid-template-columns: repeat(1, 1fr) !important; /* force one column */
   }
   .description-box {
-    width: 100%;
-    min-height: auto;
+    width: 100% !important;
+    min-height: auto !important;
   }
 }
 

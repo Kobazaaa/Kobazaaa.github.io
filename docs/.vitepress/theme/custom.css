@@ -184,7 +184,7 @@ html.dark .link-item img {
   margin-bottom: 1rem;
 }
 
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 24px; }
 
 /* Status badges shared by ProjectCard and MiniProjectCard (see utils/statusBadge.js) */
 .badge-completed {
@@ -241,4 +241,25 @@ html.dark .link-item img {
 .framed-image {
   border: 3px solid #42b883;
   border-radius: 15px;
+}
+
+/* Mobile layout safety net */
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .page-wrapper {
+    /* Horizontal padding must stay >= 24px: VitePress's default theme gives
+       fenced code blocks a -24px bleed margin below 640px that relies on
+       exactly that much padding from the containing block to avoid overflow. */
+    padding: 1.25rem 1.5rem;
+  }
+
+  /* Custom content grids (markdown inline styles + JS-bound component grids)
+     use fixed px minimums that don't shrink on narrow phones and force
+     horizontal scrolling. Collapse them all to a single column. */
+  div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
 }

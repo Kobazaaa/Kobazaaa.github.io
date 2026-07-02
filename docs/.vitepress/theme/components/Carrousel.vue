@@ -75,6 +75,14 @@ function goToImage(index) {
   opacity: 1;
 }
 
+/* Touch devices have no hover state, so keep controls visible */
+@media (hover: none) {
+  .carousel-btn,
+  .dots-container {
+    opacity: 1;
+  }
+}
+
 .carousel-btn {
   position: absolute;
   top: 50%;

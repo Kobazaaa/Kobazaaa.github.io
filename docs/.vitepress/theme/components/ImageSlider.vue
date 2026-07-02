@@ -115,6 +115,7 @@ function jumpToImage(index) {
 
 .image-reveal-container {
   width: 100%;
+  min-width: 0;
   margin: auto;
   position: relative;
 }
