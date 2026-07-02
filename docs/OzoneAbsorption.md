@@ -75,7 +75,7 @@ The project is built on a **physically-based single scattering model**, implemen
 
 ## Pairwise Comparison
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 950px; margin: 0 auto;">
 
 <ImageSlider
   :images="[

@@ -52,7 +52,7 @@ layout: page
 </p>
 <div class="contact-divider">
 <p class="social-link">
-  <a href="/Resume" class="link-item accent">
+  <a href="/Resume" class="link-item">
     <FileText :size="22"/>
     View my Resume
   </a>
