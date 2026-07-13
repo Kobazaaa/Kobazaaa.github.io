@@ -223,6 +223,14 @@ html.dark .link-item img {
   padding: 2rem;
 }
 
+.page-wrapper :not(pre) > code {
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.875em;
+  background-color: var(--vp-c-bg-mute, #313136);
+  color: var(--vp-c-text-code, #e3e3e6);
+}
+
 .video-embed {
   padding: 56.25% 0 0 0;
   position: relative;

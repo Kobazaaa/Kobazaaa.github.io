@@ -15,7 +15,7 @@ export const projects = {
     img: "./images/project-covers/Kobengine.png",
     title: "Kobengine | Engine",
     description:
-      "A small custom 2D game engine applying multiple design patterns and architecture experiments.",
+      "A custom 3D game engine written in C++ on top of the Pompeii Vulkan renderer, with scenes, components, and systems.",
     status: "Active Development",
   order: 10,
   tags: ["Solo", "C++", "Learning", "Engine", "Featured"]

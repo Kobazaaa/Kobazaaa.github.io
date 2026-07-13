@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Pompeii
-  tagline: ...is a Vulkan-based Graphics Renderer written in C++. It is a learning project to explore the Vulkan API.
+  tagline: ...is a Vulkan-based Graphics Renderer written in C++. It started as a learning project to explore the Vulkan API, but is now also powering Kobengine.
   actions:
     - theme: alt
       text: View on GitHub
@@ -16,6 +16,7 @@ hero:
 
 This project is in active development, meaning it is actively evolving and being worked on, as there is always something new to add, tweak, or improve!
 <br>
+Pompeii nowadays builds as a standalone library and serves as the renderer behind my game engine [Kobengine](/Kobengine) and its editor [Kobeditor](/Kobeditor).
 Look around here, or at the code on [GitHub](https://github.com/Kobazaaa/Pompeii) to see what Pompeii has become so far!
 
 ## Main Features
@@ -63,6 +64,16 @@ Look around here, or at the code on [GitHub](https://github.com/Kobazaaa/Pompeii
     description: 'Efficiently renders shadows by using depth information from the light’s perspective.'
   },
   {
+    title: 'Directional & Point Lights',
+    icon: 'LampCeiling',
+    description: 'Physically-based light units: directional lights in lux, point lights in lumen with falloff.'
+  },
+  {
+    title: 'Skybox',
+    icon: 'CloudSun',
+    description: 'The HDR environment map is rendered as the scene background wherever no geometry is visible.'
+  },
+  {
     title: 'Alpha Cutout',
     icon: 'Scissors',
     description: 'Optimized transparency rendering by discarding pixels based on alpha values.'
@@ -93,6 +104,7 @@ Look around here, or at the code on [GitHub](https://github.com/Kobazaaa/Pompeii
     { src: '/images/Pompeii/SponzaDepth.png', title: 'Depth Pre-Pass' },
     { src: '/images/Pompeii/SponzaAlbedo.png', title: 'G-Buf Albedo' },
     { src: '/images/Pompeii/SponzaNormal.png', title: 'G-Buf Normals' },
+    { src: '/images/Pompeii/SponzaWorldPos.png', title: 'G-Buf World Position' },
     { src: '/images/Pompeii/SponzaMetalRough.png', title: 'G-Buf Rough-Metal' },
     { src: '/images/Pompeii/SponzaHDR.png', title: 'Light Pass (HDR)' },
     { src: '/images/Pompeii/SponzaLDR.png', title: 'Blit Pass (LDR)' },
@@ -109,15 +121,28 @@ I already had some graphics programming experience, mainly with my [Software Ray
 Later, I explored hardware rendering by adding DirectX 11 support to my rasterizer, which was a great way to understand working with the GPU through an API. However, I wanted to dive into something more modern, which led me to discover Vulkan.
 
 #### Learning Vulkan
-I started out by following the [Vulkan tutorial](https://vulkan-tutorial.com), which was great. It taught me how to work with Vulkan and explained how the API worked. Although at the end of the tutorial, you end up with 1 main file with all your code which is over 1000 lines long. This was far from ideal for what I wnated to achieve.
+I started out by following the [Vulkan tutorial](https://vulkan-tutorial.com), which was great. It taught me how to work with Vulkan and explained how the API worked. Although at the end of the tutorial, you end up with 1 main file with all your code which is over 1000 lines long. This was far from ideal for what I wanted to achieve.
 <br>
 The next step was to refactor all that code into something more useable and reuseable. I created my own wrapper around Vulkan with classes, helper functions, builder pattern, and more, aiming for a structure that made it easier to extend and maintain.
 
 #### Adding Advanced Features
-One I completed the main ideas of my refactor, I started working on adding new features such as dynamic and bindless rendering, switching from forward to deferred rendering, and even adding shadowmapping and Image Based Lighting, as well as more features. At this stage, I had a fully functional Vulkan 3D rasterizer, but it still wasn’t exactly what I envisioned.
+Once I completed the main ideas of my refactor, I started working on adding new features such as dynamic and bindless rendering, switching from forward to deferred rendering, and even adding shadowmapping and Image Based Lighting, as well as more features. At this stage, I had a fully functional Vulkan 3D rasterizer, but it still wasn’t exactly what I envisioned.
+
+#### Becoming a Library
+I wanted to add more to Pompeii, expand it further, make a user interface to control objects in the scene, add logic to objects, and slowly turn it into a useable engine of sorts. That goal has since outgrown Pompeii itself: rendering and logic are now split into separate projects. Pompeii builds as a standalone static library with an explicit frame lifecycle (start, record, submit, end) and a windowing interface, so it doesn't care who hosts it. On top of it sit [Kobengine](/Kobengine), my game engine that submits meshes, lights, and camera data to Pompeii each frame, and [Kobeditor](/Kobeditor), the editor built on the engine.
 
 #### The Future
-I wanted to add more to Pompeii, expand it further, make a user interface to control objects in the scene, add logic to objects, and slowly turn it into a useable engine of sorts. That's where I am today, working on splitting rendering from logic, and making Pompeii into a useable framework.
+Pompeii continues to evolve as the rendering layer of the stack. In the near future, I want to focus on improving the renderer's usability and improving its architecture, as well as adding new render features. Longer term, I'd love to explore an API-agnostic interface layer or a render graph.
+
+## Lighting & Shadows
+
+Lighting in Pompeii is physically based: a Cook-Torrance BRDF for direct lighting, combined with Image Based Lighting (diffuse irradiance, prefiltered specular, and a BRDF LUT) generated from an HDR environment map, which also doubles as the skybox.
+<br>
+Both directional and point lights are supported, using physical units (lux and lumen). A dedicated shadow pass renders a 2D shadow map per directional light, with the light matrices automatically fitted to the scene's bounding box.
+
+<div style="max-width: 75%; margin: 24px auto; text-align: center;">
+  <img src="/images/Pompeii/SkyBox.png" alt="Skybox & IBL" class="framed-image" style="display: inline-block;" />
+</div>
 
 ## Auto Exposure
 
@@ -131,7 +156,7 @@ Automatic adjustment of the Exposure Value based on the average luminance, which
 
 ## User Interface
 
-As I am trying to turn Pompeii into something easy to work with, and something I can use to *make* stuff in, one of the first steps was providing a user interface to manipulate objects.
+As I was trying to turn Pompeii into something easy to work with, and something I could use to *make* stuff in, one of the first steps was providing a user interface to manipulate objects. This experiment has since grown into a full, separate editor: [Kobeditor](/Kobeditor), built on top of [Kobengine](/Kobengine), while Pompeii itself stays a pure rendering library.
 <div style="width: 100%; margin: 24px auto;">
 <Carrousel
   :images="[
