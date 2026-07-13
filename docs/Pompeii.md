@@ -141,7 +141,7 @@ Lighting in Pompeii is physically based: a Cook-Torrance BRDF for direct lightin
 Both directional and point lights are supported, using physical units (lux and lumen). A dedicated shadow pass renders a 2D shadow map per directional light, with the light matrices automatically fitted to the scene's bounding box.
 
 <div style="max-width: 75%; margin: 24px auto; text-align: center;">
-  <img src="/images/Pompeii/SkyBox.png" alt="Skybox & IBL" class="framed-image" style="display: inline-block;" />
+  <img src="/images/Pompeii/Skybox.png" alt="Skybox & IBL" class="framed-image" style="display: inline-block;" />
 </div>
 
 ## Auto Exposure
