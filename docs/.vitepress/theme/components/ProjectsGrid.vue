@@ -527,10 +527,10 @@ const filteredKeys = computed(() => {
 
 /* light mode — solid card colors (matching .link-item elsewhere) instead of
    near-invisible white-on-white overlays, so text and borders stay readable. */
-html:not(.dark) .pg-tag,
+html:not(.dark) .pg-tag:not(.active),
 html:not(.dark) .pg-search,
-html:not(.dark) .pg-icon-btn,
-html:not(.dark) .pg-pill,
+html:not(.dark) .pg-icon-btn:not(.active),
+html:not(.dark) .pg-pill:not(.active),
 html:not(.dark) .pg-mode {
   border-color: #ccc;
   background: #f5f5f5;
