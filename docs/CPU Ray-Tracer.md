@@ -72,7 +72,7 @@ hero:
 
 </div>
 <br>
-This is the 'main' render function. THe one that gets called for every pixel visible. It is multi-threaded since there is no dependency from one pixel on another.
+This is the 'main' render function. The one that gets called for every pixel visible. It is multi-threaded since there is no dependency from one pixel on another.
 I calculate the center coordinate of the pixel, convert to Normalized Device Coordinates (NDC) and then "shoot" the ray into the screen, calculating what it collides and how it reacts, to finally end up with the final color of the pixel.
 <div class="vp-doc">
 

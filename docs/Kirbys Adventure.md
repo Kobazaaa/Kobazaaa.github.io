@@ -27,7 +27,7 @@ Since we were beginner programmers, we were given a simple, barebones framework 
 </div>
 
 <InfoCard title="University Recognition">
-  The showcase video was my presentation for my end prodcut of Kirby's Adventure, showing off all the features. I was also lucky enough to be one of selected few to be featured on the <a href="https://www.digitalartsandentertainment.be/page/27/Programming+2">Digital Arts & Entertainment website</a>, to inspire future students and give them a glimpse of what the course is about!
+  The showcase video was my presentation for my end product of Kirby's Adventure, showing off all the features. I was also lucky enough to be one of selected few to be featured on the <a href="https://www.digitalartsandentertainment.be/page/27/Programming+2">Digital Arts & Entertainment website</a>, to inspire future students and give them a glimpse of what the course is about!
 </InfoCard>
 
 ## Class Hierarchy

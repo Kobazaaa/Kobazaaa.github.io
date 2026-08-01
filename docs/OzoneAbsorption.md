@@ -79,22 +79,22 @@ The project is built on a **physically-based single scattering model**, implemen
 
 <ImageSlider
   :images="[
-    { src: '/images/OzoneAborption/Ozone_Low.png', title: 'Ozone' },
-    { src: '/images/OzoneAborption/NoOzone_Low.png', title: 'No Ozone' },
+    { src: '/images/OzoneAbsorption/Ozone_Low.png', title: 'Ozone' },
+    { src: '/images/OzoneAbsorption/NoOzone_Low.png', title: 'No Ozone' },
   ]"
   :start="50"
 />
 <ImageSlider
   :images="[
-    { src: '/images/OzoneAborption/Ozone_Medium.png', title: 'Ozone' },
-    { src: '/images/OzoneAborption/NoOzone_Medium.png', title: 'No Ozone' },
+    { src: '/images/OzoneAbsorption/Ozone_Medium.png', title: 'Ozone' },
+    { src: '/images/OzoneAbsorption/NoOzone_Medium.png', title: 'No Ozone' },
   ]"
   :start="50"
 />
 <ImageSlider
   :images="[
-    { src: '/images/OzoneAborption/Ozone_High.png', title: 'Ozone' },
-    { src: '/images/OzoneAborption/NoOzone_High.png', title: 'No Ozone' },
+    { src: '/images/OzoneAbsorption/Ozone_High.png', title: 'Ozone' },
+    { src: '/images/OzoneAbsorption/NoOzone_High.png', title: 'No Ozone' },
   ]"
   :start="50"
 />
@@ -181,12 +181,12 @@ The project is built on a **physically-based single scattering model**, implemen
 
 <div style="width: 90%; margin: 24px auto;">
 <ImageGrid :images="[
-  { src: '/images/OzoneAborption/Ozone_Low.png',      alt: 'Sunset with Ozone', caption: 'Sunset with Ozone' },
-  { src: '/images/OzoneAborption/Ozone_Medium.png',   alt: 'Late Morning with Ozone', caption: 'Late Morning with Ozone' },
-  { src: '/images/OzoneAborption/Ozone_High.png',     alt: 'High Noon with Ozone', caption: 'High Noon with Ozone' },
-  { src: '/images/OzoneAborption/NoOzone_Low.png',    alt: 'Sunset without Ozone', caption: 'Sunset without Ozone' },
-  { src: '/images/OzoneAborption/NoOzone_Medium.png', alt: 'Late Morning without Ozone', caption: 'Late Morning without Ozone' },
-  { src: '/images/OzoneAborption/NoOzone_High.png',   alt: 'High Noon without Ozone', caption: 'High Noon without Ozone' },
+  { src: '/images/OzoneAbsorption/Ozone_Low.png',      alt: 'Sunset with Ozone', caption: 'Sunset with Ozone' },
+  { src: '/images/OzoneAbsorption/Ozone_Medium.png',   alt: 'Late Morning with Ozone', caption: 'Late Morning with Ozone' },
+  { src: '/images/OzoneAbsorption/Ozone_High.png',     alt: 'High Noon with Ozone', caption: 'High Noon with Ozone' },
+  { src: '/images/OzoneAbsorption/NoOzone_Low.png',    alt: 'Sunset without Ozone', caption: 'Sunset without Ozone' },
+  { src: '/images/OzoneAbsorption/NoOzone_Medium.png', alt: 'Late Morning without Ozone', caption: 'Late Morning without Ozone' },
+  { src: '/images/OzoneAbsorption/NoOzone_High.png',   alt: 'High Noon without Ozone', caption: 'High Noon without Ozone' },
 ]"
  />
 </div>

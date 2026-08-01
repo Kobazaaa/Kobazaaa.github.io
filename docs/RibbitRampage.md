@@ -13,7 +13,7 @@ hero:
 <div class="page-wrapper">
 
 ## About
-We were tasked to create a vertical slice of a fun game, starting from scratch. We came up with the great idea of frogs fighting a heron, getting insperation from various other games such as CupHead and Rayman Legends. After submission, this is the project we made!
+We were tasked to create a vertical slice of a fun game, starting from scratch. We came up with the great idea of frogs fighting a heron, getting inspiration from various other games such as CupHead and Rayman Legends. After submission, this is the project we made!
 <br><br>
 We scored <u>**4th**</u> place in the "Idea" category and <u>**8th**</u> in the "Fun" category, out of 32 entries!
 We also posted a DevLog each week over on our [Itch page](https://vikkever.itch.io/ribbit-rampage), which provides an in-depth look at our development cycle.

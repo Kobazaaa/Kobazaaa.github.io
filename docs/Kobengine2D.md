@@ -98,6 +98,6 @@ The engine uses a component-based architecture. Game objects are composed of reu
 For communication, the user has the option to use events that are built into the engine. Kobengine2D tries to mimic Unity events in C++, binding (member) functions and/or lambdas to events, which get called once the event gets invoked. Kobengine2D already supports events to have lambdas and event listeners as its listeners, but the user can always make a new class that inherits from EventListener to have extra functionality if they need.
 
 ### Service Locator & Singletons
-Both the Sound System and Collision System are part of the Service Locator Pattern and can be swapped out by a personal implementation if wanted. For some other classes such as the Timer class, this is not possible, as it is a purey static class.
+Both the Sound System and Collision System are part of the Service Locator Pattern and can be swapped out by a personal implementation if wanted. For some other classes such as the Timer class, this is not possible, as it is a purely static class.
 
 </div>
