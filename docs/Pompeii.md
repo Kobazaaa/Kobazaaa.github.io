@@ -245,31 +245,31 @@ void main()
     title="Graphics Programming Teachers at Howest University - DAE"
     fallback="GraduationCap"
 />
-<a href="https://vulkan-tutorial.com" target="_blank" style="text-decoration: none;">
+<a href="https://vulkan-tutorial.com" target="_blank" class="card-link">
   <BadgeCard
     title="The Vulkan Tutorial"
     fallback="BookOpen"
   />
 </a>
-<a href="https://casual-effects.com/data" target="_blank" style="text-decoration: none;">
+<a href="https://casual-effects.com/data" target="_blank" class="card-link">
 <BadgeCard
     title="Morgan McGuire's Computer Graphics Archive"
     fallback="Database"
 />
 </a>
-<a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main" target="_blank" style="text-decoration: none;">
+<a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main" target="_blank" class="card-link">
 <BadgeCard
     title="Khronos Group's glTF Sample Assets"
     fallback="Package"
 />
 </a>
-<a href="https://learnopengl.com" target="_blank" style="text-decoration: none;">
+<a href="https://learnopengl.com" target="_blank" class="card-link">
 <BadgeCard
     title="OpenGL's Tutorials at Learn OpenGL"
     fallback="Code"
 />
 </a>
-<a href="https://github.com/Kobazaaa/PompeiiResources.git" target="_blank" style="text-decoration: none;">
+<a href="https://github.com/Kobazaaa/PompeiiResources.git" target="_blank" class="card-link">
 <BadgeCard
     title="Pompeii Resources Repository"
     fallback="FolderSymlink"
