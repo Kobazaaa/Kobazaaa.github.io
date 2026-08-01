@@ -6,6 +6,22 @@ export default {
   description: "The portfolio page of Kobe Dereyne, showcasing game development, graphics programming, and other projects.",
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/images/logo-dark.png' }],
+
+    ['meta', { name: 'title', content: 'Kobe Dereyne | Graphics & Engine Programmer' }],
+    ['meta', { name: 'description', content: 'The portfolio page of Kobe Dereyne, showcasing game development, graphics programming, and other projects.' }],
+
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://kobazaaa.github.io' }],
+    ['meta', { property: 'og:title', content: 'Kobe Dereyne | Graphics & Engine Programmer' }],
+    ['meta', { property: 'og:description', content: 'The portfolio page of Kobe Dereyne, showcasing game development, graphics programming, and other projects.' }],
+    ['meta', { property: 'og:image', content: 'https://kobazaaa.github.io/images/Pompeii/UI_Model.png' }],
+    ['meta', { property: 'og:site_name', content: 'Kobe Dereyne' }],
+
+    ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { property: 'twitter:url', content: 'https://kobazaaa.github.io' }],
+    ['meta', { property: 'twitter:title', content: 'Kobe Dereyne | Graphics & Engine Programmer' }],
+    ['meta', { property: 'twitter:description', content: 'The portfolio page of Kobe Dereyne, showcasing game development, graphics programming, and other projects.' }],
+    ['meta', { property: 'twitter:image', content: 'https://kobazaaa.github.io/images/Pompeii/UI_Model.png' }],
   ],
 
   themeConfig: {
