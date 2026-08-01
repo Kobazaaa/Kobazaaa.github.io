@@ -19,7 +19,7 @@ layout: page
     <p style="margin-top: 10px;">
         <p>
             I am a passionate C++ Programmer with a strong passion for Graphics & Engine Programming.
-            Right now, I’m studying Game Development at Howest - Digital Arts & Entertainment in Belgium.
+            Recent graduate of a Bachelor's in Game Development at Howest, seeking early career positions.
         </p>
         <br>
         <p>
