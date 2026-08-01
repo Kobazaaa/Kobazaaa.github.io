@@ -36,7 +36,7 @@ layout: home
                     border: none;
                     padding: 0;
                     margin: 0;"
-                    src="documents/KobeDereyneResume.pdf#scrollbar=0&view=FitV"
+                    src="documents/KobeDereyneResume.pdf#scrollbar=0&view=FitV&navpanes=0"
                     allowfullscreen="allowfullscreen"
                     allow="fullscreen">
     </iframe>
