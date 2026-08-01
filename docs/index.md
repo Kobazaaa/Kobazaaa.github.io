@@ -8,7 +8,7 @@ layout: page
 
   <!-- Image block -->
 <div style="flex: 0 0 195px; margin: auto 0;">
-  <img src="/images/Picture2.png" alt="Kobe Dereyne" 
+  <img src="/images/Picture.png" alt="Kobe Dereyne" 
        style="width: 195px; height: 195px; border-radius: 50%; object-fit: cover; object-position: 50% 10%; border: 1.5px solid #272c2aff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);" />
 </div>
 
@@ -18,8 +18,7 @@ layout: page
   <p class="subtitle">Graphics & Engine Programmer</p>
     <p style="margin-top: 10px;">
         <p>
-            I am a passionate C++ Programmer with a strong passion for Graphics & Engine Programming.
-            Recent graduate of a Bachelor's in Game Development at Howest, seeking early career positions.
+            I'm a C++/C# programmer with a strong passion for Graphics & Engine Programming, currently working as a Graphics Programmer at AlterEyes, a VR/AR game studio, and open to new graphics/engine programming opportunities from September 2026 onward.
         </p>
         <br>
         <p>
@@ -65,6 +64,76 @@ layout: page
 ## Projects
 
 <ProjectsGrid />
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px 64px;">
+
+<div>
+
+<h2 id="experience">Experience</h2>
+
+<TimelineNode
+  title="Graphics Programmer"
+  subtitle="AlterEyes — VR/AR game studio"
+  date="Jun 2026 – Present"
+/>
+<TimelineNode
+  title="Graphics Programmer Intern"
+  subtitle="AlterEyes — VR/AR game studio"
+  date="Feb 2026 – Jun 2026"
+/>
+<TimelineNode
+  title="Math Refresher Assistant"
+  subtitle="Howest — Digital Arts & Entertainment"
+  date="Sep 2024 & Sep 2025"
+/>
+
+</div>
+
+<div>
+
+<h2 id="education">Education</h2>
+
+<TimelineNode
+  title="Bachelor's, Game Development"
+  subtitle="Howest, Kortrijk, BE"
+  date="2023 – 2026"
+/>
+<TimelineNode
+  title="Mathematics and Sciences"
+  subtitle="Erasmusatheneum, Deinze, BE"
+  date="2019 – 2023"
+/>
+<TimelineNode
+  title="STEM Sciences"
+  subtitle="Erasmusatheneum, Deinze, BE"
+  date="2017 – 2019"
+/>
+
+</div>
+
+<div>
+
+<h2 id="awards">Awards & Achievements</h2>
+
+<TimelineNode
+  title="Suma Cum Laude"
+  subtitle="Highest honors, Bachelor's degree in Game Development"
+  date="2026"
+/>
+<TimelineNode
+  title="Math and Science Graduation Award"
+  subtitle="Top academic performance in math and science"
+  date="2023"
+/>
+<TimelineNode
+  title="VWO Semi-Finalist"
+  subtitle="Semi-finalist in the Flanders Math Olympiad"
+  date="2023"
+/>
+
+</div>
+
+</div>
 
 ## Skills
 

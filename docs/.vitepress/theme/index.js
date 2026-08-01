@@ -14,6 +14,7 @@ import InfoCard from './components/InfoCard.vue';
 import TextCard from './components/TextCard.vue';
 import ContributionsGrid from './components/ContributionsGrid.vue'
 import ProjectsGrid from './components/ProjectsGrid.vue'
+import TimelineNode from './components/TimelineNode.vue'
 import * as lucide from 'lucide-vue-next'
 
 export default {
@@ -32,6 +33,7 @@ export default {
     app.component('TextCard', TextCard)
     app.component('ContributionsGrid', ContributionsGrid)
     app.component('ProjectsGrid', ProjectsGrid)
+    app.component('TimelineNode', TimelineNode)
 
     Object.entries(lucide).forEach(([name, component]) => {
       app.component(name, component)
