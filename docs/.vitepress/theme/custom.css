@@ -25,6 +25,17 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Anchors that wrap a card component (e.g. linked BadgeCard "resources"):
+   the card itself already gives hover feedback via its border color, so the
+   link shouldn't also recolor the text green/dark-green, underline, or
+   shift position - that fights with the card's own hover state. */
+a.card-link,
+a.card-link:hover {
+  color: inherit;
+  text-decoration: none;
+  transform: none;
+}
+
 .social-link {
   margin-top: 10px;
 }

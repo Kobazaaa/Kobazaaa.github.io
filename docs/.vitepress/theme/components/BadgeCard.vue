@@ -46,10 +46,16 @@ defineProps({
     inset 0 1px 1px rgba(255, 255, 255, 0.05),
     0 2px 4px rgba(0, 0, 0, 0.3);
 }
+.card:hover {
+  border-color: #42b883;
+}
 /* light mode */
 html:not(.dark) .card {
   background-color: #f5f5f5;
   border-color: #ccc;
   background: linear-gradient(135deg, #f4f4f4, #eaeaea);
+}
+html:not(.dark) .card:hover {
+  border-color: #2e7d32;
 }
 </style>
