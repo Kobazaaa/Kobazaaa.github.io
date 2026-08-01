@@ -261,6 +261,19 @@ html.dark .link-item img {
   border-radius: 15px;
 }
 
+.resume-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 1100px) {
+  .resume-columns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 64px;
+  }
+}
+
 /* Mobile layout safety net */
 body {
   overflow-x: hidden;

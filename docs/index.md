@@ -65,7 +65,7 @@ layout: page
 
 <ProjectsGrid />
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px 64px;">
+<div class="resume-columns">
 
 <div>
 
