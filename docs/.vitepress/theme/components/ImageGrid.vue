@@ -78,7 +78,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .image-grid {
     grid-template-columns: 1fr !important;
   }

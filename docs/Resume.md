@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div style="max-width: 900px; margin: 0 auto; padding: 2rem; text-align: center;">
+<div class="pdf-embed-wrapper" style="max-width: 900px; margin: 0 auto; text-align: center;">
 
   <p style="color: #666; max-width: 500px; margin: 0 auto 2rem;">
     You can view or download my resume below. It outlines my experience, skills, and education in game development and programming.

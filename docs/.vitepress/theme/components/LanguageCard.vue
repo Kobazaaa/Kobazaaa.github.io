@@ -70,6 +70,8 @@ const writingValue = countGreenSquares(props.writing)
 
 .language-card progress {
   flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
   width: auto;
   height: 14px;
   -webkit-appearance: none;
@@ -107,5 +109,15 @@ html:not(.dark) .language-card progress::-webkit-progress-bar {
 
 .language-card p {
   margin: 0;
+}
+
+@media (max-width: 380px) {
+  .language-card p {
+    gap: 12px;
+  }
+  .language-card p span {
+    width: 88px;
+    font-size: 0.85rem;
+  }
 }
 </style>

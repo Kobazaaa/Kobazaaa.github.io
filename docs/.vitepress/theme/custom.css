@@ -304,3 +304,34 @@ body {
 html:not(.dark) .contact-divider {
   border-top-color: rgba(0, 0, 0, 0.12);
 }
+
+/* Shared wrapper for embedded-PDF pages (Resume, OzoneAbsorption, PPGAGame).
+   The 2rem padding is comfortable on desktop but eats a fifth of the screen
+   width on a phone, so it shrinks at the same breakpoint as .page-wrapper. */
+.pdf-embed-wrapper {
+  padding: 2rem;
+}
+@media (max-width: 640px) {
+  .pdf-embed-wrapper {
+    padding: 1.25rem 0.75rem;
+  }
+}
+
+/* Homepage intro (avatar + bio + contact): on phones the three-column flex
+   row has nowhere near enough width to sit side by side, so it stacks. The
+   avatar centers itself; the text blocks take the full width instead of
+   keeping their desktop flex-basis. */
+@media (max-width: 640px) {
+  .hero-intro-row {
+    flex-direction: column;
+  }
+  .hero-avatar {
+    align-self: center;
+  }
+  .hero-bio,
+  .hero-contact {
+    align-self: stretch;
+    width: 100%;
+    max-width: 100% !important;
+  }
+}

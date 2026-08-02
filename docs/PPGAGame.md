@@ -34,13 +34,31 @@ The portals can be moved around by the player. If the bear enter one of the port
 ## PPGA Report
 In this report I wrote for this project, I highlight 3 unique ways of how I use PPGA's unique abilities in my project.
 
-<div style="max-width: 950px; margin: 0 auto; padding: 2rem; text-align: center;">
-  <iframe 
-    src="documents/PPGAReport.pdf" 
-    width="100%" 
-    height="1200px" 
-    style="border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
-  </iframe>
+<div class="pdf-embed-wrapper" style="max-width: 950px; margin: 0 auto; text-align: center;">
+  <div style="position: relative;
+              width: 100%;
+              height: 0;
+              padding-top: 141.4286%;
+              margin-top: 1.6em;
+              margin-bottom: 0.9em;
+              overflow: hidden;
+              border-radius: 12px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+              will-change: transform;">
+    <iframe loading="lazy"
+            style="position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    border: none;
+                    padding: 0;
+                    margin: 0;"
+            src="documents/PPGAReport.pdf"
+            allowfullscreen="allowfullscreen"
+            allow="fullscreen">
+    </iframe>
+  </div>
 </div>
 
 </div>

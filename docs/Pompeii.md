@@ -239,7 +239,7 @@ void main()
 
 ## Resources
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 16px;">
 
 <BadgeCard
     title="Graphics Programming Teachers at Howest University - DAE"

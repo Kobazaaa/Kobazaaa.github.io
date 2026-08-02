@@ -19,7 +19,7 @@ defineProps({
 </script>
 
 <style scoped>
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .card {
     width: 100% !important;
     height: auto !important;

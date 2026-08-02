@@ -194,7 +194,7 @@ The project is built on a **physically-based single scattering model**, implemen
 
 ## Read More
 
-<div style="max-width: 100%; margin: 0 auto; padding: 2rem; text-align: center;">
+<div class="pdf-embed-wrapper" style="max-width: 100%; margin: 0 auto; text-align: center;">
   <div style="position: relative;
               width: 100%;
               height: 0;

@@ -86,7 +86,7 @@ How do you test if your game engine works though? Well you make a game in it! Fo
 The update loop is crucial to be correct in order to ensure predictable behaviour. We need to make sure everything happens in the correct order per frame.
 
 <div style="margin: 20px 0">
-  <img style="width: 350px;" src="/images/Kobengine2D/UpdateLoop.png" alt="UpdateLoop"/>
+  <img style="max-width: 350px; width: 100%; height: auto;" src="/images/Kobengine2D/UpdateLoop.png" alt="UpdateLoop"/>
 </div>
 
 ### Components

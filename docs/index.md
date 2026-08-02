@@ -4,16 +4,16 @@ layout: page
 
 <div class="page-wrapper">
 
-<div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+<div class="hero-intro-row" style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
 
   <!-- Image block -->
-<div style="flex: 0 0 195px; margin: auto 0;">
+<div class="hero-avatar" style="flex: 0 0 195px; margin: auto 0;">
   <img src="/images/Picture.png" alt="Kobe Dereyne" 
        style="width: 195px; height: 195px; border-radius: 50%; object-fit: cover; object-position: 50% 10%; border: 1.5px solid #272c2aff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);" />
 </div>
 
   <!-- Bio text -->
-  <div style="flex: 2 1 300px; min-width: 0; max-width: 600px;">
+  <div class="hero-bio" style="flex: 2 1 300px; min-width: 0; max-width: 600px;">
     <h2 style="margin-top: 0;">Kobe Dereyne</h2>
   <p class="subtitle">Graphics & Engine Programmer</p>
     <p style="margin-top: 10px;">
@@ -29,7 +29,7 @@ layout: page
   </div>
 
 <!-- Contact info -->
-<div style="flex: 1;">
+<div class="hero-contact" style="flex: 1;">
   <h2 style="margin-top: 0;">Contact</h2>
 
 <p class="social-link">
@@ -139,7 +139,7 @@ layout: page
 
 ### Languages
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 24px;">
 <!-- Dutch -->
 <LanguageCard
     title="Dutch (native)"
@@ -166,7 +166,7 @@ layout: page
 
 ### Programming Languages
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 24px;">
 <!-- C++ -->
 <SkillCard
     title="C++"
@@ -196,7 +196,7 @@ layout: page
 
 ### Game Engines
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 24px;">
 <!-- Unity -->
 <SkillCard
     title="Unity"
@@ -216,7 +216,7 @@ layout: page
 
 ### API's & Libraries
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 24px;">
 <!-- Vulkan -->
 <SkillCard
     title="Vulkan"
@@ -252,7 +252,7 @@ layout: page
 ### Version Control
 
 <!-- GitHub -->
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 24px;">
 <SkillCard
     title="GitHub"
     img="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
@@ -276,7 +276,7 @@ layout: page
 
 ### Collaboration & Tools
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 24px;">
 <!-- Visual Studio -->
 <SkillCard
     title="Visual Studio"

@@ -82,7 +82,7 @@ function jumpToImage(index) {
 </script>
 
 <style scoped>
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .image-reveal-container {
     max-width: 100%;
   }

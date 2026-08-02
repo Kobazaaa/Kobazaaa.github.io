@@ -1,13 +1,14 @@
 <template>
-  <div class="feature-container">
+  <div class="feature-container" ref="rootEl">
     <div class="feature-list" :style="{ gridTemplateColumns: `repeat(${columns}, 1fr)` }">
       <div
         class="feature-card"
         v-for="(feature, index) in features"
         :key="index"
-        :class="{ hovered: hoveredIndex === index }"
-        @mouseenter="showDescription(feature, index)"
-        @mouseleave="clearDescription"
+        :class="{ hovered: hoveredIndex === index || pinnedIndex === index }"
+        @mouseenter="hoveredIndex = index"
+        @mouseleave="hoveredIndex = null"
+        @click="togglePin(index)"
       >
         <div class="feature-header">
           <component
@@ -22,25 +23,25 @@
     <div class="description-box">
       <div class="desc-header">
         <component
-          :is="lucideIcons[hoveredFeatureIcon] || DefaultIcon"
+          :is="lucideIcons[displayFeature?.icon] || DefaultIcon"
           class="lucide-icon"
         />
-        <strong class="desc-title">{{ hoveredFeatureTitle || 'Hover over an item' }}</strong>
+        <strong class="desc-title">{{ displayFeature?.title || 'Select an item' }}</strong>
       </div>
       <p class="desc-body">
-        {{ hoveredFeatureDescription || 'Description will appear here.' }}
+        {{ displayFeature?.description || 'Hover or tap a feature to see its description.' }}
       </p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import * as lucideIcons from 'lucide-vue-next'
 import { Wrench } from 'lucide-vue-next'
 
 const DefaultIcon = Wrench
-defineProps({
+const props = defineProps({
   features: {
     type: Array,
     required: true,
@@ -52,28 +53,56 @@ defineProps({
   }
 });
 
-const hoveredFeatureTitle = ref('');
-const hoveredFeatureDescription = ref('');
-const hoveredFeatureIcon = ref('');
+// Clicking a card "pins" it so its description stays up regardless of where
+// the mouse goes afterward - hovering a *different* card while one is pinned
+// only highlights it, it doesn't steal the description. With nothing pinned,
+// hover falls back to previewing whatever's under the cursor (so unpinning
+// a card the mouse never left doesn't blank the panel), and it's also what
+// makes the description reachable on touch, where hover never fires.
+// Clicking the pinned card again, clicking outside, or Escape all unpin.
 const hoveredIndex = ref(null);
+const pinnedIndex = ref(null);
+const rootEl = ref(null);
 
-function showDescription(feature, index) {
-  hoveredFeatureTitle.value = feature.title;
-  hoveredFeatureDescription.value = feature.description;
-  hoveredFeatureIcon.value = feature.icon;
-  hoveredIndex.value = index;
+const pinnedFeature = computed(() =>
+  pinnedIndex.value !== null ? props.features[pinnedIndex.value] : null
+);
+const hoveredFeature = computed(() =>
+  hoveredIndex.value !== null ? props.features[hoveredIndex.value] : null
+);
+const displayFeature = computed(() => pinnedFeature.value ?? hoveredFeature.value);
+
+function togglePin(index) {
+  pinnedIndex.value = pinnedIndex.value === index ? null : index;
 }
 
-function clearDescription() {
-  hoveredFeatureTitle.value = '';
-  hoveredFeatureDescription.value = '';
-  hoveredFeatureIcon.value = '';
-  hoveredIndex.value = null;
+function unpin() {
+  pinnedIndex.value = null;
 }
+
+function handleDocumentClick(e) {
+  if (rootEl.value && !rootEl.value.contains(e.target)) {
+    unpin();
+  }
+}
+
+function handleKeydown(e) {
+  if (e.key === 'Escape') unpin();
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleDocumentClick);
+  document.addEventListener('keydown', handleKeydown);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleDocumentClick);
+  document.removeEventListener('keydown', handleKeydown);
+});
 </script>
 
 <style scoped>
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .feature-container {
     flex-direction: column !important;
     gap: 20px !important;
@@ -113,6 +142,7 @@ function clearDescription() {
   color: white;
   transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .feature-card.hovered {
