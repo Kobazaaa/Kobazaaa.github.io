@@ -16,7 +16,11 @@
             class="lucide-icon"
           />
           <strong>{{ feature.title }}</strong>
+          <ChevronDown class="feature-chevron" :class="{ open: pinnedIndex === index }" />
         </div>
+        <p class="feature-card-inline-desc" :class="{ expanded: pinnedIndex === index }">
+          {{ feature.description }}
+        </p>
       </div>
     </div>
 
@@ -38,7 +42,7 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import * as lucideIcons from 'lucide-vue-next'
-import { Wrench } from 'lucide-vue-next'
+import { Wrench, ChevronDown } from 'lucide-vue-next'
 
 const DefaultIcon = Wrench
 const props = defineProps({
@@ -112,9 +116,25 @@ onBeforeUnmount(() => {
     min-width: auto !important;
     grid-template-columns: repeat(1, 1fr) !important; /* force one column */
   }
+  /* On a long stacked list, a separate description panel below every card
+     means constant scrolling back and forth to read it. Replace it with an
+     accordion: each card expands its own description in place when tapped. */
   .description-box {
-    width: 100% !important;
-    min-height: auto !important;
+    display: none !important;
+  }
+  .feature-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .feature-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .feature-chevron {
+    display: inline-block !important;
+  }
+  .feature-card-inline-desc.expanded {
+    display: block !important;
   }
 }
 
@@ -156,6 +176,33 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.feature-chevron {
+  display: none;
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #888;
+  transition: transform 0.2s ease;
+}
+.feature-card.hovered .feature-chevron {
+  color: #42b883;
+}
+.feature-chevron.open {
+  transform: rotate(180deg);
+}
+
+.feature-card-inline-desc {
+  display: none;
+  width: 100%;
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #ccc;
 }
 
 .lucide-icon {
@@ -226,5 +273,10 @@ html:not(.dark) .description-box {
 
 html:not(.dark) .desc-body {
   color: #444;
+}
+
+html:not(.dark) .feature-card-inline-desc {
+  color: #444;
+  border-top-color: rgba(0, 0, 0, 0.12);
 }
 </style>
