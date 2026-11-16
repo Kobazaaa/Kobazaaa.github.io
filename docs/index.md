@@ -44,7 +44,7 @@ layout: page
   </a>
 </p>
 <p class="social-link">
-  <a href="https://www.linkedin.com/in/kobe-dereyne-925ba02a3/" target="_blank" class="link-item">
+  <a href="https://www.linkedin.com/in/kobe-dereyne/" target="_blank" class="link-item">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn" class="link-icon" />
     LinkedIn
   </a>

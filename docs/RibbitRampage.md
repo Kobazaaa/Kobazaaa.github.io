@@ -129,9 +129,9 @@ import { VPTeamMembers } from 'vitepress/theme';
   {
     name: 'Kobe Dereyne',
     title: 'Programmer',
-  avatar: 'https://unavatar.io/linkedin/kobe-dereyne-925ba02a3',
+  avatar: 'https://unavatar.io/linkedin/kobe-dereyne',
     links: [
-      { icon: 'linkedin', link: 'https://www.linkedin.com/in/kobe-dereyne-925ba02a3/' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/kobe-dereyne/' },
     ]
   },
   {
