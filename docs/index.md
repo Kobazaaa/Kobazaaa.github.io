@@ -16,7 +16,7 @@ layout: page
   <div class="hero-bio" style="flex: 2 1 300px; min-width: 0; max-width: 600px;">
     <h2 style="margin-top: 0;">Kobe Dereyne</h2>
   <p class="subtitle">Graphics & Engine Programmer</p>
-    <p style="margin-top: 10px;">
+    <div style="margin-top: 10px;">
         <p>
             I'm a C++/C# programmer with a strong passion for Graphics & Engine Programming, currently working as a Graphics Programmer at AlterEyes, a VR/AR game studio, and open to new graphics/engine programming opportunities from September 2026 onward.
         </p>
@@ -25,7 +25,7 @@ layout: page
             I like building things from the ground up and figuring out how to make things run faster or look better. <br>
             Math, science, and computer science have always been strong interests of mine, which led me to study Game Development. During my studies I discovered a love for Graphics & Engine Programming.
         </p>
-    </p>
+    </div>
   </div>
 
 <!-- Contact info -->

@@ -1,4 +1,4 @@
-import * as lucideIcons from 'lucide-vue-next'
+import * as lucideIcons from '@lucide/vue'
 
 export const DefaultIcon = lucideIcons['Wrench']
 export { lucideIcons }

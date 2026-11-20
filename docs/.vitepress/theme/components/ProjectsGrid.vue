@@ -96,7 +96,7 @@
 
 <script setup>
 import { computed, ref, nextTick } from 'vue'
-import { Search, X } from 'lucide-vue-next'
+import { Search, X } from '@lucide/vue'
 import ProjectCard from './ProjectCard.vue'
 import { projects } from '../projects'
 
