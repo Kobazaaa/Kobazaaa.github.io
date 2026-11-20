@@ -83,7 +83,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { Search, X } from '@lucide/vue'
+import { Search, X } from 'lucide-vue-next'
 
 const props = defineProps({
   items: {

@@ -41,8 +41,8 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
-import * as lucideIcons from '@lucide/vue'
-import { Wrench, ChevronDown } from '@lucide/vue'
+import * as lucideIcons from 'lucide-vue-next'
+import { Wrench, ChevronDown } from 'lucide-vue-next'
 
 const DefaultIcon = Wrench
 const props = defineProps({
