@@ -98,14 +98,9 @@ layout: page
   date="2023 – 2026"
 />
 <TimelineNode
-  title="Mathematics and Sciences"
+  title="High School Degree, Mathematics and Sciences"
   subtitle="Erasmusatheneum, Deinze, BE"
   date="2019 – 2023"
-/>
-<TimelineNode
-  title="STEM Sciences"
-  subtitle="Erasmusatheneum, Deinze, BE"
-  date="2017 – 2019"
 />
 
 </div>
@@ -115,7 +110,7 @@ layout: page
 <h2 id="awards">Awards & Achievements</h2>
 
 <TimelineNode
-  title="Suma Cum Laude"
+  title="Summa Cum Laude"
   subtitle="Highest honors, Bachelor's degree in Game Development"
   date="2026"
 />
@@ -141,24 +136,18 @@ layout: page
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 24px;">
 <!-- Dutch -->
 <LanguageCard
-    title="Dutch (native)"
-    speaking="      🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜"
-    understanding=" 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜"
-    writing="       🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜"
+    title="Dutch"
+    level="Native"
 />
 <!-- English -->
 <LanguageCard
     title="English"
-    speaking="      🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜"
-    understanding=" 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜"
-    writing="       🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜"
+    level="Fluent"
 />
 <!-- French -->
 <LanguageCard
     title="French"
-    speaking="      🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜"
-    understanding=" 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜"
-    writing="       🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜"
+    level="Basic"
 />
 </div>
 
