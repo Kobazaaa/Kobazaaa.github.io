@@ -18,12 +18,11 @@ layout: page
   <p class="subtitle">Graphics & Engine Programmer</p>
     <div style="margin-top: 10px;">
         <p>
-            I'm a C++/C# programmer with a strong passion for Graphics & Engine Programming, currently working as a Graphics Programmer at AlterEyes, a VR/AR game studio, and open to new graphics/engine programming opportunities from September 2026 onward.
+            I'm a C++/C# programmer with a strong passion for Graphics & Engine Programming. I have professional experience working in a team as a programmer myself and am currently looking for a new job in the gaming industry as a Graphics/Engine programmer.
         </p>
         <br>
         <p>
-            I like building things from the ground up and figuring out how to make things run faster or look better. <br>
-            Math, science, and computer science have always been strong interests of mine, which led me to study Game Development. During my studies I discovered a love for Graphics & Engine Programming.
+            I like building things from the ground up and figuring out how to make things run faster or look better. Math, science, and computer science have always been strong interests of mine, which led me to study Game Development. During my studies I discovered a love for Graphics & Engine Programming, eventually graduating <b>Summa Cum Laude</b> (Highest Honors).
         </p>
     </div>
   </div>
@@ -74,7 +73,7 @@ layout: page
 <TimelineNode
   title="Graphics Programmer"
   subtitle="AlterEyes — VR/AR game studio"
-  date="Jun 2026 – Present"
+  date="Jun 2026 – Sept 2026"
 />
 <TimelineNode
   title="Graphics Programmer Intern"
